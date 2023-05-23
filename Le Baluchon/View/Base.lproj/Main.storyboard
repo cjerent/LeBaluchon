@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zEP-PN-h6N">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="vlT-lg-3z2">
+            <objects>
+                <navigationController id="zEP-PN-h6N" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8GV-bp-5Wz">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <navigationBarAppearance key="standardAppearance" backgroundImageContentMode="bottom">
+                            <color key="backgroundColor" red="0.34507045149999999" green="0.44015038010000002" blue="0.967284739" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <textAttributes key="titleTextAttributes">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </textAttributes>
+                        </navigationBarAppearance>
+                        <navigationBarAppearance key="scrollEdgeAppearance" backgroundImageContentMode="bottom">
+                            <color key="backgroundColor" red="0.34507045149999999" green="0.44015038010000002" blue="0.967284739" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <textAttributes key="titleTextAttributes">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </textAttributes>
+                        </navigationBarAppearance>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="WB0-Hs-qs1" kind="relationship" relationship="rootViewController" id="05N-be-cdb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5UL-eZ-T92" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-295" y="-294"/>
+        </scene>
+        <!--Bienvenue-->
+        <scene sceneID="0mD-V5-upo">
+            <objects>
+                <viewController id="WB0-Hs-qs1" customClass="HomePageViewController" customModule="Le_Baluchon" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="O0W-9s-b2K">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Baluchon" translatesAutoresizingMaskIntoConstraints="NO" id="CiH-Lv-bYM">
+                                <rect key="frame" x="10" y="113" width="373" height="71.666666666666686"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ef0-2e-ll1">
+                                <rect key="frame" x="40" y="318" width="313" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="1rg-UA-gcg"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <backgroundConfiguration key="background" image="Taux"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="j3q-Me-RlS" kind="show" id="LD7-kK-1my"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sJC-Go-M7W">
+                                <rect key="frame" x="40" y="448" width="313" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="t6e-TV-fjs"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <backgroundConfiguration key="background" image="Translation"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="qLz-Lr-owi" kind="show" id="2ff-ai-Dqp"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fdf-sp-wiu">
+                                <rect key="frame" x="40" y="578" width="313" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="yGg-S8-Rts"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <backgroundConfiguration key="background" image="Weather"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="v1g-uX-FzC" kind="show" id="s2m-35-rvU"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Baluchon-purple" translatesAutoresizingMaskIntoConstraints="NO" id="Ae4-nQ-8sD">
+                                <rect key="frame" x="131" y="698" width="131" height="100"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Separator" translatesAutoresizingMaskIntoConstraints="NO" id="8vb-Ge-Efn">
+                                <rect key="frame" x="40" y="195" width="313" height="103"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="103" id="1cN-xk-j8J"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="dTl-FP-DlQ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="sJC-Go-M7W" firstAttribute="centerX" secondItem="O0W-9s-b2K" secondAttribute="centerX" id="Fdh-yC-MuI"/>
+                            <constraint firstItem="CiH-Lv-bYM" firstAttribute="top" secondItem="dTl-FP-DlQ" secondAttribute="top" constant="10" id="GKb-Ub-hDi"/>
+                            <constraint firstItem="dTl-FP-DlQ" firstAttribute="trailing" secondItem="CiH-Lv-bYM" secondAttribute="trailing" constant="10" id="IQD-do-P1d"/>
+                            <constraint firstItem="sJC-Go-M7W" firstAttribute="leading" secondItem="dTl-FP-DlQ" secondAttribute="leading" constant="40" id="KB6-G7-yLV"/>
+                            <constraint firstItem="Ae4-nQ-8sD" firstAttribute="centerX" secondItem="O0W-9s-b2K" secondAttribute="centerX" id="PWy-3R-GXk"/>
+                            <constraint firstItem="dTl-FP-DlQ" firstAttribute="bottom" secondItem="Ae4-nQ-8sD" secondAttribute="bottom" constant="20" id="SYL-6R-CzA"/>
+                            <constraint firstItem="Ae4-nQ-8sD" firstAttribute="leading" secondItem="dTl-FP-DlQ" secondAttribute="leading" constant="131" id="UwU-C4-F28"/>
+                            <constraint firstItem="fdf-sp-wiu" firstAttribute="leading" secondItem="dTl-FP-DlQ" secondAttribute="leading" constant="40" id="YhJ-0V-uI8"/>
+                            <constraint firstItem="ef0-2e-ll1" firstAttribute="leading" secondItem="dTl-FP-DlQ" secondAttribute="leading" constant="40" id="aOc-gc-u73"/>
+                            <constraint firstItem="8vb-Ge-Efn" firstAttribute="trailing" secondItem="ef0-2e-ll1" secondAttribute="trailing" id="eCk-V3-zAd"/>
+                            <constraint firstItem="ef0-2e-ll1" firstAttribute="top" secondItem="8vb-Ge-Efn" secondAttribute="bottom" constant="20" id="eP3-kj-xx7"/>
+                            <constraint firstItem="fdf-sp-wiu" firstAttribute="centerX" secondItem="O0W-9s-b2K" secondAttribute="centerX" id="ex0-ZS-MCy"/>
+                            <constraint firstItem="8vb-Ge-Efn" firstAttribute="leading" secondItem="ef0-2e-ll1" secondAttribute="leading" id="fLP-wy-s8u"/>
+                            <constraint firstItem="Ae4-nQ-8sD" firstAttribute="centerX" secondItem="fdf-sp-wiu" secondAttribute="centerX" id="idE-AR-AGU"/>
+                            <constraint firstItem="Ae4-nQ-8sD" firstAttribute="top" secondItem="fdf-sp-wiu" secondAttribute="bottom" constant="20" id="l2f-8h-fY4"/>
+                            <constraint firstItem="sJC-Go-M7W" firstAttribute="top" secondItem="ef0-2e-ll1" secondAttribute="bottom" constant="30" id="nih-3A-33l"/>
+                            <constraint firstItem="ef0-2e-ll1" firstAttribute="centerX" secondItem="O0W-9s-b2K" secondAttribute="centerX" id="qB4-36-HZu"/>
+                            <constraint firstItem="8vb-Ge-Efn" firstAttribute="top" secondItem="CiH-Lv-bYM" secondAttribute="bottom" constant="10.333333333333314" id="qOy-gF-CyF"/>
+                            <constraint firstItem="CiH-Lv-bYM" firstAttribute="leading" secondItem="dTl-FP-DlQ" secondAttribute="leading" constant="10" id="qjb-cU-cnv"/>
+                            <constraint firstItem="dTl-FP-DlQ" firstAttribute="bottom" secondItem="ef0-2e-ll1" secondAttribute="bottom" constant="400" id="s7a-IC-iff"/>
+                            <constraint firstItem="fdf-sp-wiu" firstAttribute="top" secondItem="sJC-Go-M7W" secondAttribute="bottom" constant="30" id="yvN-Jx-ZbL"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Bienvenue" id="N48-Bu-zkQ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LCO-zQ-Mk4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="554.96183206106866" y="-294.36619718309862"/>
+        </scene>
+        <!--Taux de change-->
+        <scene sceneID="1rk-hM-YJP">
+            <objects>
+                <viewController id="j3q-Me-RlS" customClass="ExchangeRateViewController" customModule="Le_Baluchon" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ymk-xb-HwB">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Vous pouvez calculer votre taux de change ici" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k6W-3C-ebu">
+                                <rect key="frame" x="29" y="326" width="348" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="gd9-Pc-D90"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Taux de change" id="d6q-Vz-Xy3"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JtT-cH-eQx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1416" y="-294"/>
+        </scene>
+        <!--Traduction-->
+        <scene sceneID="bi1-fj-1Tk">
+            <objects>
+                <viewController id="qLz-Lr-owi" customClass="TranslationViewController" customModule="Le_Baluchon" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EPe-kL-1cI">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="23J-lE-Nh6"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Traduction" id="CFC-zE-y2X"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Ek-Oh-5y5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2260" y="-295"/>
+        </scene>
+        <!--Météo-->
+        <scene sceneID="FLO-Rp-oFv">
+            <objects>
+                <viewController id="v1g-uX-FzC" customClass="WeatherViewController" customModule="Le_Baluchon" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KOg-Yh-fy4">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="DlF-C1-Luf"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Météo" id="aSa-nZ-w8N"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Ug-tt-OJg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3080" y="-294"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Baluchon" width="233.33332824707031" height="66.666664123535156"/>
+        <image name="Baluchon-purple" width="25" height="25"/>
+        <image name="Separator" width="700" height="200"/>
+        <image name="Taux" width="233.33332824707031" height="66.666664123535156"/>
+        <image name="Translation" width="233.33332824707031" height="66.666664123535156"/>
+        <image name="Weather" width="233.33332824707031" height="66.666664123535156"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

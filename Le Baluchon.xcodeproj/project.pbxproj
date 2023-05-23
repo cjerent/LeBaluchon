@@ -1,0 +1,419 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		527528B42A1CF9B900C3855A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527528B32A1CF9B900C3855A /* AppDelegate.swift */; };
+		527528B62A1CF9B900C3855A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527528B52A1CF9B900C3855A /* SceneDelegate.swift */; };
+		527528BB2A1CF9B900C3855A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 527528B92A1CF9B900C3855A /* Main.storyboard */; };
+		527528BD2A1CF9BB00C3855A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 527528BC2A1CF9BB00C3855A /* Assets.xcassets */; };
+		527528C02A1CF9BB00C3855A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 527528BE2A1CF9BB00C3855A /* LaunchScreen.storyboard */; };
+		527528CC2A1D1CD600C3855A /* HomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527528CB2A1D1CD600C3855A /* HomePageViewController.swift */; };
+		527528CE2A1D355400C3855A /* ExchangeRateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527528CD2A1D355400C3855A /* ExchangeRateViewController.swift */; };
+		527528D02A1D356C00C3855A /* TranslationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527528CF2A1D356C00C3855A /* TranslationViewController.swift */; };
+		527528D22A1D358B00C3855A /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527528D12A1D358B00C3855A /* WeatherViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		527528B02A1CF9B900C3855A /* Le Baluchon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Le Baluchon.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		527528B32A1CF9B900C3855A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		527528B52A1CF9B900C3855A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		527528BA2A1CF9B900C3855A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		527528BC2A1CF9BB00C3855A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		527528BF2A1CF9BB00C3855A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		527528C12A1CF9BB00C3855A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		527528CB2A1D1CD600C3855A /* HomePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageViewController.swift; sourceTree = "<group>"; };
+		527528CD2A1D355400C3855A /* ExchangeRateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExchangeRateViewController.swift; sourceTree = "<group>"; };
+		527528CF2A1D356C00C3855A /* TranslationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationViewController.swift; sourceTree = "<group>"; };
+		527528D12A1D358B00C3855A /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		527528AD2A1CF9B900C3855A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		527528A72A1CF9B900C3855A = {
+			isa = PBXGroup;
+			children = (
+				527528B22A1CF9B900C3855A /* Le Baluchon */,
+				527528B12A1CF9B900C3855A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		527528B12A1CF9B900C3855A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				527528B02A1CF9B900C3855A /* Le Baluchon.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		527528B22A1CF9B900C3855A /* Le Baluchon */ = {
+			isa = PBXGroup;
+			children = (
+				527528C92A1D185600C3855A /* Controller */,
+				527528C72A1D182A00C3855A /* View */,
+				527528C82A1D183600C3855A /* Model */,
+				527528CA2A1D187000C3855A /* Supporting files */,
+			);
+			path = "Le Baluchon";
+			sourceTree = "<group>";
+		};
+		527528C72A1D182A00C3855A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				527528B92A1CF9B900C3855A /* Main.storyboard */,
+				527528BE2A1CF9BB00C3855A /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		527528C82A1D183600C3855A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		527528C92A1D185600C3855A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				527528CB2A1D1CD600C3855A /* HomePageViewController.swift */,
+				527528CD2A1D355400C3855A /* ExchangeRateViewController.swift */,
+				527528CF2A1D356C00C3855A /* TranslationViewController.swift */,
+				527528D12A1D358B00C3855A /* WeatherViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		527528CA2A1D187000C3855A /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				527528BC2A1CF9BB00C3855A /* Assets.xcassets */,
+				527528B32A1CF9B900C3855A /* AppDelegate.swift */,
+				527528B52A1CF9B900C3855A /* SceneDelegate.swift */,
+				527528C12A1CF9BB00C3855A /* Info.plist */,
+			);
+			path = "Supporting files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		527528AF2A1CF9B900C3855A /* Le Baluchon */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 527528C42A1CF9BB00C3855A /* Build configuration list for PBXNativeTarget "Le Baluchon" */;
+			buildPhases = (
+				527528AC2A1CF9B900C3855A /* Sources */,
+				527528AD2A1CF9B900C3855A /* Frameworks */,
+				527528AE2A1CF9B900C3855A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Le Baluchon";
+			productName = "Le Baluchon";
+			productReference = 527528B02A1CF9B900C3855A /* Le Baluchon.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		527528A82A1CF9B900C3855A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					527528AF2A1CF9B900C3855A = {
+						CreatedOnToolsVersion = 14.3;
+					};
+				};
+			};
+			buildConfigurationList = 527528AB2A1CF9B900C3855A /* Build configuration list for PBXProject "Le Baluchon" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 527528A72A1CF9B900C3855A;
+			productRefGroup = 527528B12A1CF9B900C3855A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				527528AF2A1CF9B900C3855A /* Le Baluchon */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		527528AE2A1CF9B900C3855A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				527528C02A1CF9BB00C3855A /* LaunchScreen.storyboard in Resources */,
+				527528BD2A1CF9BB00C3855A /* Assets.xcassets in Resources */,
+				527528BB2A1CF9B900C3855A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		527528AC2A1CF9B900C3855A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				527528B42A1CF9B900C3855A /* AppDelegate.swift in Sources */,
+				527528D22A1D358B00C3855A /* WeatherViewController.swift in Sources */,
+				527528B62A1CF9B900C3855A /* SceneDelegate.swift in Sources */,
+				527528CE2A1D355400C3855A /* ExchangeRateViewController.swift in Sources */,
+				527528CC2A1D1CD600C3855A /* HomePageViewController.swift in Sources */,
+				527528D02A1D356C00C3855A /* TranslationViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		527528B92A1CF9B900C3855A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				527528BA2A1CF9B900C3855A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		527528BE2A1CF9BB00C3855A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				527528BF2A1CF9BB00C3855A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		527528C22A1CF9BB00C3855A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		527528C32A1CF9BB00C3855A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		527528C52A1CF9BB00C3855A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 85ZAP462P7;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Le Baluchon/Supporting files/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Le Baluchon";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "fr.jerentcharlene.Le-Baluchon";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		527528C62A1CF9BB00C3855A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 85ZAP462P7;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Le Baluchon/Supporting files/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Le Baluchon";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIStatusBarStyle = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "fr.jerentcharlene.Le-Baluchon";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		527528AB2A1CF9B900C3855A /* Build configuration list for PBXProject "Le Baluchon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				527528C22A1CF9BB00C3855A /* Debug */,
+				527528C32A1CF9BB00C3855A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		527528C42A1CF9BB00C3855A /* Build configuration list for PBXNativeTarget "Le Baluchon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				527528C52A1CF9BB00C3855A /* Debug */,
+				527528C62A1CF9BB00C3855A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 527528A82A1CF9B900C3855A /* Project object */;
+}
