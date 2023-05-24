@@ -1,10 +1,12 @@
 {
   "images" : [
     {
+      "filename" : "Weather.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "Weather@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },

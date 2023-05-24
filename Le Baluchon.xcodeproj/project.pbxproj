@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		524ECBEC2A1E1C6600EB6127 /* Montserrat-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 524ECBEB2A1E1C6500EB6127 /* Montserrat-Regular.otf */; };
+		524ECBEE2A1E230C00EB6127 /* Nickainley-Normal.otf in Resources */ = {isa = PBXBuildFile; fileRef = 524ECBED2A1E230C00EB6127 /* Nickainley-Normal.otf */; };
+		524ECBF02A1E253500EB6127 /* alamain1.otf in Resources */ = {isa = PBXBuildFile; fileRef = 524ECBEF2A1E253500EB6127 /* alamain1.otf */; };
 		527528B42A1CF9B900C3855A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527528B32A1CF9B900C3855A /* AppDelegate.swift */; };
 		527528B62A1CF9B900C3855A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527528B52A1CF9B900C3855A /* SceneDelegate.swift */; };
 		527528BB2A1CF9B900C3855A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 527528B92A1CF9B900C3855A /* Main.storyboard */; };
@@ -19,6 +22,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		524ECBEB2A1E1C6500EB6127 /* Montserrat-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.otf"; sourceTree = "<group>"; };
+		524ECBED2A1E230C00EB6127 /* Nickainley-Normal.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nickainley-Normal.otf"; sourceTree = "<group>"; };
+		524ECBEF2A1E253500EB6127 /* alamain1.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = alamain1.otf; sourceTree = "<group>"; };
 		527528B02A1CF9B900C3855A /* Le Baluchon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Le Baluchon.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		527528B32A1CF9B900C3855A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		527528B52A1CF9B900C3855A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +110,9 @@
 				527528B32A1CF9B900C3855A /* AppDelegate.swift */,
 				527528B52A1CF9B900C3855A /* SceneDelegate.swift */,
 				527528C12A1CF9BB00C3855A /* Info.plist */,
+				524ECBEB2A1E1C6500EB6127 /* Montserrat-Regular.otf */,
+				524ECBED2A1E230C00EB6127 /* Nickainley-Normal.otf */,
+				524ECBEF2A1E253500EB6127 /* alamain1.otf */,
 			);
 			path = "Supporting files";
 			sourceTree = "<group>";
@@ -169,6 +178,9 @@
 				527528C02A1CF9BB00C3855A /* LaunchScreen.storyboard in Resources */,
 				527528BD2A1CF9BB00C3855A /* Assets.xcassets in Resources */,
 				527528BB2A1CF9B900C3855A /* Main.storyboard in Resources */,
+				524ECBEE2A1E230C00EB6127 /* Nickainley-Normal.otf in Resources */,
+				524ECBEC2A1E1C6600EB6127 /* Montserrat-Regular.otf in Resources */,
+				524ECBF02A1E253500EB6127 /* alamain1.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
