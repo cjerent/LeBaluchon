@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5244FF152A2F6900003F9ED7 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5244FF142A2F6900003F9ED7 /* Currency.swift */; };
 		524ECBEC2A1E1C6600EB6127 /* Montserrat-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 524ECBEB2A1E1C6500EB6127 /* Montserrat-Regular.otf */; };
 		524ECBEE2A1E230C00EB6127 /* Nickainley-Normal.otf in Resources */ = {isa = PBXBuildFile; fileRef = 524ECBED2A1E230C00EB6127 /* Nickainley-Normal.otf */; };
 		524ECBF02A1E253500EB6127 /* alamain1.otf in Resources */ = {isa = PBXBuildFile; fileRef = 524ECBEF2A1E253500EB6127 /* alamain1.otf */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5244FF142A2F6900003F9ED7 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		524ECBEB2A1E1C6500EB6127 /* Montserrat-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.otf"; sourceTree = "<group>"; };
 		524ECBED2A1E230C00EB6127 /* Nickainley-Normal.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nickainley-Normal.otf"; sourceTree = "<group>"; };
 		524ECBEF2A1E253500EB6127 /* alamain1.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = alamain1.otf; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 		527528C82A1D183600C3855A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				5244FF142A2F6900003F9ED7 /* Currency.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -196,6 +199,7 @@
 				527528B62A1CF9B900C3855A /* SceneDelegate.swift in Sources */,
 				527528CE2A1D355400C3855A /* ExchangeRateViewController.swift in Sources */,
 				527528CC2A1D1CD600C3855A /* HomePageViewController.swift in Sources */,
+				5244FF152A2F6900003F9ED7 /* Currency.swift in Sources */,
 				527528D02A1D356C00C3855A /* TranslationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
