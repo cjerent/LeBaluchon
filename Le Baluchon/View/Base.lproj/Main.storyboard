@@ -338,6 +338,15 @@ Mais quel temps fait-il à la maison ?
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-weather" translatesAutoresizingMaskIntoConstraints="NO" id="vcN-Ib-TLM">
                                 <rect key="frame" x="131.66666666666666" y="68.999999999999986" width="166.99999999999997" height="166.66666666666663"/>
                             </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="KJO-ny-85j">
+                                <rect key="frame" x="95" y="566" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="DlF-C1-Luf"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -351,6 +360,9 @@ Mais quel temps fait-il à la maison ?
                     </view>
                     <tabBarItem key="tabBarItem" title="Météo" image="sun.max" catalog="system" id="SoP-43-7gZ"/>
                     <navigationItem key="navigationItem" title="Météo" id="aSa-nZ-w8N"/>
+                    <connections>
+                        <outlet property="weatherDisplayUITextView" destination="KJO-ny-85j" id="dLW-Cm-nTq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Ug-tt-OJg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
