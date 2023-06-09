@@ -7,8 +7,21 @@
 
 import Foundation
 
-struct WeatherInfo {
-    var cityName: String?
-    var weatherDescription: String?
-    var temperature: String?
+
+struct Name: Decodable {
+    let name: String?
+}
+
+struct WeatherData: Decodable {
+    let weather: [Weather]
+    let main: Main
+}
+
+struct Weather: Decodable {
+    let description: String?
+    
+}
+
+struct Main: Decodable {
+    let temp: Double?
 }
