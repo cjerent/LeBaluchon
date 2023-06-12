@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		521DC11B2A372CF4008C3D8C /* Double+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521DC11A2A372CF4008C3D8C /* Double+extension.swift */; };
 		5244FF152A2F6900003F9ED7 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5244FF142A2F6900003F9ED7 /* Currency.swift */; };
 		5244FF172A30B2C9003F9ED7 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5244FF162A30B2C9003F9ED7 /* WeatherService.swift */; };
-		5244FF192A30BF1D003F9ED7 /* WeatherInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5244FF182A30BF1D003F9ED7 /* WeatherInfo.swift */; };
+		5244FF192A30BF1D003F9ED7 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5244FF182A30BF1D003F9ED7 /* Weather.swift */; };
 		524ECBEC2A1E1C6600EB6127 /* Montserrat-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 524ECBEB2A1E1C6500EB6127 /* Montserrat-Regular.otf */; };
 		524ECBEE2A1E230C00EB6127 /* Nickainley-Normal.otf in Resources */ = {isa = PBXBuildFile; fileRef = 524ECBED2A1E230C00EB6127 /* Nickainley-Normal.otf */; };
 		524ECBF02A1E253500EB6127 /* alamain1.otf in Resources */ = {isa = PBXBuildFile; fileRef = 524ECBEF2A1E253500EB6127 /* alamain1.otf */; };
@@ -25,9 +26,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		521DC11A2A372CF4008C3D8C /* Double+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+extension.swift"; sourceTree = "<group>"; };
 		5244FF142A2F6900003F9ED7 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		5244FF162A30B2C9003F9ED7 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
-		5244FF182A30BF1D003F9ED7 /* WeatherInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherInfo.swift; sourceTree = "<group>"; };
+		5244FF182A30BF1D003F9ED7 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		524ECBEB2A1E1C6500EB6127 /* Montserrat-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.otf"; sourceTree = "<group>"; };
 		524ECBED2A1E230C00EB6127 /* Nickainley-Normal.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Nickainley-Normal.otf"; sourceTree = "<group>"; };
 		524ECBEF2A1E253500EB6127 /* alamain1.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = alamain1.otf; sourceTree = "<group>"; };
@@ -96,7 +98,7 @@
 			children = (
 				5244FF142A2F6900003F9ED7 /* Currency.swift */,
 				5244FF162A30B2C9003F9ED7 /* WeatherService.swift */,
-				5244FF182A30BF1D003F9ED7 /* WeatherInfo.swift */,
+				5244FF182A30BF1D003F9ED7 /* Weather.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -108,6 +110,7 @@
 				527528CD2A1D355400C3855A /* ExchangeRateViewController.swift */,
 				527528CF2A1D356C00C3855A /* TranslationViewController.swift */,
 				527528D12A1D358B00C3855A /* WeatherViewController.swift */,
+				521DC11A2A372CF4008C3D8C /* Double+extension.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -206,9 +209,10 @@
 				527528B62A1CF9B900C3855A /* SceneDelegate.swift in Sources */,
 				527528CE2A1D355400C3855A /* ExchangeRateViewController.swift in Sources */,
 				527528CC2A1D1CD600C3855A /* HomePageViewController.swift in Sources */,
+				521DC11B2A372CF4008C3D8C /* Double+extension.swift in Sources */,
 				5244FF152A2F6900003F9ED7 /* Currency.swift in Sources */,
 				527528D02A1D356C00C3855A /* TranslationViewController.swift in Sources */,
-				5244FF192A30BF1D003F9ED7 /* WeatherInfo.swift in Sources */,
+				5244FF192A30BF1D003F9ED7 /* Weather.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
