@@ -109,8 +109,6 @@ class WeatherService {
                 
                 if let cityName = cityName?.name {
                     print(cityName)
-                    print(cityName)
-                    print(cityName) 
                     let name = Name(name: cityName)
                     callback(true,name)
                     
