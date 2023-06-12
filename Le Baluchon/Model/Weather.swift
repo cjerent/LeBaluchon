@@ -19,7 +19,7 @@ struct WeatherData: Decodable {
 
 struct Weather: Decodable {
     let description: String?
-    
+    let icon: String?
 }
 
 struct Main: Decodable {
