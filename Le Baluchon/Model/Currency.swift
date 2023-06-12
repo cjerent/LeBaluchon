@@ -11,7 +11,5 @@ let currencies = ["€ EUR",
                   "₣ CHF",
                   "£ GPB",
                   "¥ JPY",
-                  "$ CAD",
-                  "¥ CNY",
                   "$ USD"]
                   
