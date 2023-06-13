@@ -23,7 +23,7 @@ class TranslationService {
     func getTranslation(callback: @escaping (Bool, Translation?) -> Void) {
         var request = URLRequest(url: translationUrl)
         request.httpMethod = "POST"
-        let body = "q=\(textToTranslate)&target=\(target)&source=\(source)&key=AIzaSyALUfevit3k5xHsAEQLFsQ48_sgBg9r8U4"
+        let body = "q=\(textToTranslate)&target=\(target)&source=\(source)&key=\(googleTranslateAPI)"
         request.httpBody = body.data(using: .utf8)
         
         let session = URLSession(configuration: .default)
