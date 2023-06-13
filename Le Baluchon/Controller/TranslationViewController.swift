@@ -8,19 +8,57 @@
 import UIKit
 
 class TranslationViewController: UIViewController {
-    @IBOutlet weak var sentenceToTranslateTextView: UITextView!
+
+
+    @IBOutlet weak var toTranslateUITextField: UITextField!
+    @IBOutlet weak var toDisplayTranslationUITextView: UITextView!
+    
+    
+    var translate = TranslationService()
     
     override func viewDidLoad() {
       super.viewDidLoad()
-
-      let myColor = UIColor.customViolet
-        sentenceToTranslateTextView.layer.borderColor = myColor.cgColor
-        sentenceToTranslateTextView.layer.cornerRadius = 5.0
-        sentenceToTranslateTextView.layer.borderWidth = 1.0
+        modifyTextViewStyle(of: toDisplayTranslationUITextView)
+        modifyTextFieldStyle(of: toTranslateUITextField)
         
-
+        displayTranslation()
+       
    }
-    @IBAction func dismiss(_ sender: UITapGestureRecognizer) {
-        sentenceToTranslateTextView.resignFirstResponder()
+   
+    
+    private func modifyTextFieldStyle(of textField: UITextField) {
+        let customPurple = UIColor.customViolet
+        textField.layer.borderColor = customPurple.cgColor
+        textField.layer.cornerRadius = 5.0
+        textField.layer.borderWidth = 2.0
+        
     }
+    
+    private func modifyTextViewStyle(of textView: UITextView) {
+        let customPurple = UIColor.customViolet
+        textView.layer.borderColor = customPurple.cgColor
+         textView.layer.cornerRadius = 5.0
+          textView.layer.borderWidth = 2.0
+    }
+    
+    @IBAction func dismiss(_ sender: UITapGestureRecognizer) {
+        toTranslateUITextField.resignFirstResponder()
+        toDisplayTranslationUITextView.resignFirstResponder()
+    }
+    
+    func displayTranslation() {
+        translate.getTranslation { (success, translation ) in
+            guard let translation = translation, success == true else {
+                
+                return
+            }
+            self.updateTranslation(translation)
+        }
+    }
+    
+    private func updateTranslation(_ translation: Translation) {
+        toDisplayTranslationUITextView.text = translation.translatedText
+    }
+
+
 }

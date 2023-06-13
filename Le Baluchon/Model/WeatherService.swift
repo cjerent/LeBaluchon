@@ -37,9 +37,7 @@ class WeatherService {
                     for i in weatherData {
                         if let description = i.description{
                             let description = description
-                            
-                            
-                            
+ 
                             print(i.description!)
                             
                             let additionnalWeatherInfo = Weather(description: description, icon: nil)
@@ -145,7 +143,8 @@ class WeatherService {
                             URLSession.shared.dataTask(with: URL(string: "https://openweathermap.org/img/wn/\(icon)@2x.png")!) { iconData, _ , _ in
                                 if let iconData = iconData {
                                     DispatchQueue.main.async {
-                                        callback(true, iconData)
+                                        let icon = iconData
+                                        callback(true, icon)
                                     }
                                 }
                             }.resume()

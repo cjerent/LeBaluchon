@@ -4,5 +4,7 @@
 <dict>
 	<key>openWeatherBaluchApi</key>
 	<string>98a4d4b59ace1e6719047d01993beb67</string>
+	<key>googleTranslateAPI</key>
+	<string>AIzaSyALUfevit3k5xHsAEQLFsQ48_sgBg9r8U4</string>
 </dict>
 </plist>

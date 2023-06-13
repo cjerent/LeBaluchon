@@ -48,7 +48,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.45000000000000001" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="x6a-In-RPP">
-                                <rect key="frame" x="0.0" y="59" width="430" height="790"/>
+                                <rect key="frame" x="0.0" y="103" width="430" height="795"/>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="qUC-FC-MPo">
                                 <rect key="frame" x="65" y="316" width="300" height="300"/>
@@ -237,26 +237,6 @@ vaut ta devise locale en Dollar Américain ?
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oJV-sN-abs">
-                                <rect key="frame" x="20" y="255.66666666666663" width="390" height="186"/>
-                                <color key="backgroundColor" red="0.2611362934" green="0.58149904009999998" blue="0.68381071090000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <string key="text">
-Do you parles anglais ?
-🇬🇧
-1. Ecris ta phrase en français 🇫🇷;
-2. Valide...tu es bilingue ! Well done !
-</string>
-                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="23"/>
-                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tzs-mE-A9t">
-                                <rect key="frame" x="20" y="491.66666666666669" width="390" height="217.33333333333331"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" name="Cochin" family="Cochin" pointSize="26"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="yes"/>
-                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MDb-mv-TEq">
                                 <rect key="frame" x="20" y="759" width="390" height="60"/>
                                 <color key="backgroundColor" red="0.34507045149999999" green="0.44015038010000002" blue="0.967284739" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -269,32 +249,80 @@ Do you parles anglais ?
                                 </buttonConfiguration>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-translate" translatesAutoresizingMaskIntoConstraints="NO" id="n8h-IX-OLh">
-                                <rect key="frame" x="131.66666666666666" y="68.999999999999986" width="166.99999999999997" height="166.66666666666663"/>
+                                <rect key="frame" x="131.66666666666669" y="68.999999999999986" width="166.66666666666669" height="166.66666666666663"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" priority="750" constant="166.66999999999999" id="OX4-ud-qKw"/>
+                                </constraints>
                             </imageView>
+                            <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="aua-Sy-t8P">
+                                <rect key="frame" x="20" y="408.66666666666674" width="390" height="300.33333333333326"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Français" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RbH-qs-Nb6">
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="75"/>
+                                        <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="17"/>
+                                        <color key="textColor" red="0.34507045149999999" green="0.44015038010000002" blue="0.967284739" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="A8x-P9-hzG">
+                                        <rect key="frame" x="0.0" y="75" width="390" height="75.333333333333314"/>
+                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="18"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="yes" keyboardType="alphabet" returnKeyType="go"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Anglais" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rnT-6B-V5l">
+                                        <rect key="frame" x="0.0" y="150.33333333333331" width="390" height="75"/>
+                                        <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="17"/>
+                                        <color key="textColor" red="0.34507045149999999" green="0.44015038010000002" blue="0.967284739" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mly-w3-qaE">
+                                        <rect key="frame" x="0.0" y="225.33333333333331" width="390" height="75"/>
+                                        <color key="backgroundColor" red="0.34507045149999999" green="0.44015038010000002" blue="0.967284739" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="AmericanTypewriter-Semibold" family="American Typewriter" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Ium-qs-svA">
+                                <rect key="frame" x="20" y="255.66666666666663" width="390" height="143"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Rrm-Xu-z9I">
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="143"/>
+                                        <string key="text">Do you parles anglais ?
+🇬🇧
+1. Ecris ta phrase en français 🇫🇷;
+2. Valide...tu es bilingue ! Well done !</string>
+                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="23"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.2611362934" green="0.58149904009999998" blue="0.68381071090000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="Rrm-Xu-z9I" firstAttribute="centerX" secondItem="Ium-qs-svA" secondAttribute="centerX" id="Lzn-cs-N4C"/>
+                                    <constraint firstItem="Rrm-Xu-z9I" firstAttribute="centerY" secondItem="Ium-qs-svA" secondAttribute="centerY" id="z5x-pd-Ipd"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="23J-lE-Nh6"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="MDb-mv-TEq" firstAttribute="top" secondItem="Tzs-mE-A9t" secondAttribute="bottom" constant="30" id="2Gz-IM-kFU"/>
-                            <constraint firstItem="oJV-sN-abs" firstAttribute="centerX" secondItem="EPe-kL-1cI" secondAttribute="centerX" id="Akr-0F-CWE"/>
-                            <constraint firstItem="oJV-sN-abs" firstAttribute="leading" secondItem="23J-lE-Nh6" secondAttribute="leading" constant="20" id="Dy2-8m-fG5"/>
-                            <constraint firstItem="MDb-mv-TEq" firstAttribute="top" secondItem="Tzs-mE-A9t" secondAttribute="bottom" constant="50" id="HCb-MN-tvo"/>
+                            <constraint firstItem="MDb-mv-TEq" firstAttribute="top" secondItem="aua-Sy-t8P" secondAttribute="bottom" constant="50" id="1dc-D9-AVr"/>
+                            <constraint firstItem="Ium-qs-svA" firstAttribute="centerX" secondItem="EPe-kL-1cI" secondAttribute="centerX" id="4aV-LK-lwf"/>
+                            <constraint firstItem="aua-Sy-t8P" firstAttribute="leading" secondItem="23J-lE-Nh6" secondAttribute="leading" constant="20" id="JdG-Mn-TlL"/>
                             <constraint firstItem="23J-lE-Nh6" firstAttribute="bottom" secondItem="MDb-mv-TEq" secondAttribute="bottom" constant="30" id="Kku-Y2-6xz"/>
+                            <constraint firstItem="23J-lE-Nh6" firstAttribute="trailing" secondItem="aua-Sy-t8P" secondAttribute="trailing" constant="20" id="NXS-Am-Pff"/>
                             <constraint firstItem="n8h-IX-OLh" firstAttribute="top" secondItem="23J-lE-Nh6" secondAttribute="top" constant="10" id="OMP-Jm-WAq"/>
-                            <constraint firstItem="oJV-sN-abs" firstAttribute="top" secondItem="n8h-IX-OLh" secondAttribute="bottom" constant="20" id="Pmv-Le-ItI"/>
-                            <constraint firstItem="Tzs-mE-A9t" firstAttribute="leading" secondItem="23J-lE-Nh6" secondAttribute="leading" constant="20" id="aL1-Tb-AA8"/>
+                            <constraint firstItem="Ium-qs-svA" firstAttribute="top" secondItem="n8h-IX-OLh" secondAttribute="bottom" constant="20" id="agU-NT-cR6"/>
+                            <constraint firstItem="aua-Sy-t8P" firstAttribute="top" secondItem="Ium-qs-svA" secondAttribute="bottom" constant="10" id="fSQ-kV-Xns"/>
                             <constraint firstItem="MDb-mv-TEq" firstAttribute="leading" secondItem="23J-lE-Nh6" secondAttribute="leading" constant="20" id="gC4-pD-2oi"/>
-                            <constraint firstItem="23J-lE-Nh6" firstAttribute="trailing" secondItem="Tzs-mE-A9t" secondAttribute="trailing" constant="20" id="izd-i3-abr"/>
-                            <constraint firstItem="Tzs-mE-A9t" firstAttribute="top" secondItem="oJV-sN-abs" secondAttribute="bottom" constant="50" id="mop-aS-crv"/>
+                            <constraint firstItem="aua-Sy-t8P" firstAttribute="top" secondItem="EPe-kL-1cI" secondAttribute="top" constant="408.66666666666674" id="iSz-Qh-QWy"/>
+                            <constraint firstItem="Ium-qs-svA" firstAttribute="leading" secondItem="23J-lE-Nh6" secondAttribute="leading" constant="20" id="nl6-3u-bE0"/>
                             <constraint firstItem="23J-lE-Nh6" firstAttribute="trailing" secondItem="MDb-mv-TEq" secondAttribute="trailing" constant="20" id="vW6-wg-dlW"/>
                             <constraint firstItem="n8h-IX-OLh" firstAttribute="centerX" secondItem="EPe-kL-1cI" secondAttribute="centerX" id="x9t-08-18P"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="2Gz-IM-kFU"/>
-                            </mask>
-                        </variation>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="rhc-Ip-plA" appends="YES" id="eUZ-Sa-xnk"/>
                         </connections>
@@ -302,7 +330,8 @@ Do you parles anglais ?
                     <tabBarItem key="tabBarItem" title="Traduction" image="character.bubble" catalog="system" id="scE-V5-prM"/>
                     <navigationItem key="navigationItem" title="Traduction" id="CFC-zE-y2X"/>
                     <connections>
-                        <outlet property="sentenceToTranslateTextView" destination="Tzs-mE-A9t" id="04T-bv-Oeh"/>
+                        <outlet property="toDisplayTranslationUITextView" destination="mly-w3-qaE" id="cxG-wh-JGK"/>
+                        <outlet property="toTranslateUITextField" destination="A8x-P9-hzG" id="KTH-uF-ZFa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Ek-Oh-5y5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -312,7 +341,7 @@ Do you parles anglais ?
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2260" y="-295"/>
+            <point key="canvasLocation" x="2259.0697674418602" y="-295.49356223175965"/>
         </scene>
         <!--Météo-->
         <scene sceneID="FLO-Rp-oFv">
@@ -322,7 +351,7 @@ Do you parles anglais ?
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N2T-Ew-cbf">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="N2T-Ew-cbf">
                                 <rect key="frame" x="20" y="245.66666666666663" width="390" height="213.33333333333337"/>
                                 <color key="backgroundColor" red="0.2611362934" green="0.58149904009999998" blue="0.68381071090000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
@@ -353,20 +382,20 @@ Mais quel temps fait-il à la maison ?
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="HI3-G5-Gzk" userLabel="FirstCityWeatherInfoStackView">
                                                 <rect key="frame" x="0.0" y="0.0" width="192.66666666666666" height="120"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New York" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WUZ-N1-Jud">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New York" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WUZ-N1-Jud">
                                                         <rect key="frame" x="0.0" y="0.0" width="192.66666666666666" height="40"/>
                                                         <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="30"/>
                                                         <color key="textColor" red="0.34507045149999999" green="0.44015038010000002" blue="0.967284739" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fso-kb-2fF">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fso-kb-2fF">
                                                         <rect key="frame" x="0.0" y="40" width="192.66666666666666" height="40"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" name="AmericanTypewriter-Semibold" family="American Typewriter" pointSize="25"/>
                                                         <color key="textColor" red="0.34507045149999999" green="0.44015038010000002" blue="0.967284739" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E15-ak-p0X">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E15-ak-p0X">
                                                         <rect key="frame" x="0.0" y="80" width="192.66666666666666" height="40"/>
                                                         <fontDescription key="fontDescription" name="AmericanTypewriter-Semibold" family="American Typewriter" pointSize="20"/>
                                                         <color key="textColor" red="0.34507045149999999" green="0.44015038010000002" blue="0.967284739" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -381,7 +410,7 @@ Mais quel temps fait-il à la maison ?
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="vs." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n3X-lE-6GF">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="vs." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="n3X-lE-6GF">
                                         <rect key="frame" x="0.0" y="120" width="390" height="120"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="10" id="gEf-zc-pHK"/>
@@ -396,19 +425,19 @@ Mais quel temps fait-il à la maison ?
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Kv2-xx-yXg" userLabel="SecondCityWeatherInfoStackView">
                                                 <rect key="frame" x="0.0" y="0.0" width="192.66666666666666" height="120"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paris" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oNk-lW-8bh">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paris" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oNk-lW-8bh">
                                                         <rect key="frame" x="0.0" y="0.0" width="192.66666666666666" height="40"/>
                                                         <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="30"/>
                                                         <color key="textColor" red="0.34507045149999999" green="0.44015038010000002" blue="0.967284739" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="oXT-f9-2Xn">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="oXT-f9-2Xn">
                                                         <rect key="frame" x="0.0" y="40" width="192.66666666666666" height="40"/>
                                                         <fontDescription key="fontDescription" name="AmericanTypewriter-Semibold" family="American Typewriter" pointSize="25"/>
                                                         <color key="textColor" red="0.34507045149999999" green="0.44015038010000002" blue="0.967284739" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="i3d-nI-uk5">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="i3d-nI-uk5">
                                                         <rect key="frame" x="0.0" y="80" width="192.66666666666666" height="40"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="40" id="37q-p1-MfP"/>
@@ -464,7 +493,7 @@ Mais quel temps fait-il à la maison ?
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="MXL-6Z-sIa"/>
+        <segue reference="05N-be-cdb"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" systemColor="systemBackgroundColor"/>
     <resources>
@@ -478,9 +507,6 @@ Mais quel temps fait-il à la maison ?
         <image name="logo-translate" width="166.66667175292969" height="166.66667175292969"/>
         <image name="logo-weather" width="166.66667175292969" height="166.66667175292969"/>
         <image name="sun.max" catalog="system" width="128" height="125"/>
-        <systemColor name="labelColor">
-            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
