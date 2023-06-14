@@ -7,12 +7,25 @@
 
 import Foundation
 
-let openWeatherApi = valueForAPIKey(named: "openWeatherBaluchApi")
+
+
 
 class WeatherService {
     
-    let firstCityUrl = URL(string: "https://api.openweathermap.org/data/2.5/weather?lat=40.7127281&lon=-74.0060152&units=metric&lang=fr&appid=\(openWeatherApi)")!
-    let secondCityUrl = URL(string: "https://api.openweathermap.org/data/2.5/weather?q=Paris&units=metric&lang=fr&appid=\(openWeatherApi)")!
+    static let openWeatherApi = valueForAPIKey(named: "openWeatherApi")
+    
+    // the list of cities included in the api is available in the WeatherCityList.swift file
+    static var firstCityName: String = "New York"
+    static let secondCityName: String = "Sao Paulo"
+    static let firstCityNameWithEncoding: String = firstCityName.encodeString()
+    static let secondCityNameWithEncoding: String = secondCityName.encodeString()
+    static let units: String = "metric"
+    static let lang: String = "fr"
+    static let format: String = "text"
+    
+    let firstCityUrl = URL(string: "https://api.openweathermap.org/data/2.5/weather?q=\(firstCityNameWithEncoding)&units=\(units)&lang=\(lang)&appid=\(openWeatherApi)")!
+    let secondCityUrl = URL(string: "https://api.openweathermap.org/data/2.5/weather?q=\(secondCityNameWithEncoding)&units=\(units)&lang=\(lang)&appid=\(openWeatherApi)")!
+
     
     private var task: URLSessionDataTask?
     

@@ -9,7 +9,7 @@ import Foundation
 
 let currencies = ["€ EUR",
                   "₣ CHF",
-                  "£ GPB",
+                  "￡ GPB",
                   "¥ JPY",
                   "$ USD"]
                   

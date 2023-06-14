@@ -56,7 +56,7 @@ extension ExchangeRateViewController: UIPickerViewDelegate {
         var pickerLabel: UILabel? = (view as? UILabel)
         if pickerLabel == nil {
             pickerLabel = UILabel()
-            pickerLabel?.font = UIFont(name: "American Typewriter", size: 30)
+            pickerLabel?.font = UIFont(name: "American Typewriter", size: 25)
             pickerLabel?.textAlignment = .center
         }
         pickerLabel?.text = currencies[row]
