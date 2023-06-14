@@ -18,11 +18,12 @@ class WeatherViewController: UIViewController {
     @IBOutlet weak var secondCityWeatherDescriptionUILabel: UILabel!
     @IBOutlet weak var secondCityWeatherIconUIImageView: UIImageView!
     
+    @IBOutlet weak var presentationUIStackView: UIStackView!
     var weather = WeatherService()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        modifyStackViewStyle(of: presentationUIStackView)
         changeNameDisplay()
         changetemperatureDisplay()
         changeDescriptionDisplay()
@@ -123,6 +124,9 @@ class WeatherViewController: UIViewController {
         present(alertVC, animated: true, completion: nil)
     }
     
+    private func modifyStackViewStyle(of stackView: UIStackView) {
+         stackView.layer.cornerRadius = 5.0
+    }
     
 }
 

@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		521DC11B2A372CF4008C3D8C /* Double+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521DC11A2A372CF4008C3D8C /* Double+extension.swift */; };
 		521DC11F2A378C26008C3D8C /* ApiKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 521DC11E2A378C26008C3D8C /* ApiKeys.plist */; };
-		521DC1232A3794D5008C3D8C /* ApiKeys.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521DC1222A3794D5008C3D8C /* ApiKeys.swift.swift */; };
+		521DC1232A3794D5008C3D8C /* ApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521DC1222A3794D5008C3D8C /* ApiKeys.swift */; };
 		521DC1252A38650C008C3D8C /* TranslationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521DC1242A38650C008C3D8C /* TranslationService.swift */; };
 		521DC1272A38682A008C3D8C /* Translation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 521DC1262A38682A008C3D8C /* Translation.swift */; };
 		5244FF152A2F6900003F9ED7 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5244FF142A2F6900003F9ED7 /* Currency.swift */; };
@@ -32,7 +32,7 @@
 /* Begin PBXFileReference section */
 		521DC11A2A372CF4008C3D8C /* Double+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+extension.swift"; sourceTree = "<group>"; };
 		521DC11E2A378C26008C3D8C /* ApiKeys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ApiKeys.plist; sourceTree = "<group>"; };
-		521DC1222A3794D5008C3D8C /* ApiKeys.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKeys.swift.swift; sourceTree = "<group>"; };
+		521DC1222A3794D5008C3D8C /* ApiKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKeys.swift; sourceTree = "<group>"; };
 		521DC1242A38650C008C3D8C /* TranslationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationService.swift; sourceTree = "<group>"; };
 		521DC1262A38682A008C3D8C /* Translation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Translation.swift; sourceTree = "<group>"; };
 		5244FF142A2F6900003F9ED7 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
@@ -107,7 +107,7 @@
 				5244FF142A2F6900003F9ED7 /* Currency.swift */,
 				5244FF162A30B2C9003F9ED7 /* WeatherService.swift */,
 				5244FF182A30BF1D003F9ED7 /* Weather.swift */,
-				521DC1222A3794D5008C3D8C /* ApiKeys.swift.swift */,
+				521DC1222A3794D5008C3D8C /* ApiKeys.swift */,
 				521DC1242A38650C008C3D8C /* TranslationService.swift */,
 				521DC1262A38682A008C3D8C /* Translation.swift */,
 			);
@@ -222,7 +222,7 @@
 				527528B62A1CF9B900C3855A /* SceneDelegate.swift in Sources */,
 				527528CE2A1D355400C3855A /* ExchangeRateViewController.swift in Sources */,
 				521DC1272A38682A008C3D8C /* Translation.swift in Sources */,
-				521DC1232A3794D5008C3D8C /* ApiKeys.swift.swift in Sources */,
+				521DC1232A3794D5008C3D8C /* ApiKeys.swift in Sources */,
 				527528CC2A1D1CD600C3855A /* HomePageViewController.swift in Sources */,
 				521DC11B2A372CF4008C3D8C /* Double+extension.swift in Sources */,
 				5244FF152A2F6900003F9ED7 /* Currency.swift in Sources */,

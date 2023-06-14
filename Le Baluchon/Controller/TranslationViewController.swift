@@ -10,29 +10,24 @@ import UIKit
 class TranslationViewController: UIViewController {
 
 
-    @IBOutlet weak var toTranslateUITextField: UITextField!
+ 
+    @IBOutlet weak var toTranslateUITextView: UITextView!
     @IBOutlet weak var toDisplayTranslationUITextView: UITextView!
     
+    @IBOutlet weak var translationUIButton: UIButton!
     
+    @IBOutlet weak var presentationUIStackView: UIStackView!
     var translate = TranslationService()
     
     override func viewDidLoad() {
       super.viewDidLoad()
+        modifyStackViewStyle(of: presentationUIStackView)
         modifyTextViewStyle(of: toDisplayTranslationUITextView)
-        modifyTextFieldStyle(of: toTranslateUITextField)
+        modifyTextViewStyle(of: toTranslateUITextView)
         
-        displayTranslation()
-       
    }
    
-    
-    private func modifyTextFieldStyle(of textField: UITextField) {
-        let customPurple = UIColor.customViolet
-        textField.layer.borderColor = customPurple.cgColor
-        textField.layer.cornerRadius = 5.0
-        textField.layer.borderWidth = 2.0
-        
-    }
+
     
     private func modifyTextViewStyle(of textView: UITextView) {
         let customPurple = UIColor.customViolet
@@ -42,8 +37,13 @@ class TranslationViewController: UIViewController {
     }
     
     @IBAction func dismiss(_ sender: UITapGestureRecognizer) {
-        toTranslateUITextField.resignFirstResponder()
+        toTranslateUITextView.resignFirstResponder()
         toDisplayTranslationUITextView.resignFirstResponder()
+    }
+    
+    @IBAction func tappedTranslationButton(_ sender: UIButton) {
+        translate.addTextToTranslate(of: toTranslateUITextView.text)
+        displayTranslation()
     }
     
     func displayTranslation() {
@@ -57,7 +57,12 @@ class TranslationViewController: UIViewController {
     }
     
     private func updateTranslation(_ translation: Translation) {
+        translate.reset()
         toDisplayTranslationUITextView.text = translation.translatedText
+    }
+    
+    private func modifyStackViewStyle(of stackView: UIStackView) {
+         stackView.layer.cornerRadius = 5.0
     }
 
 

@@ -247,6 +247,9 @@ vaut ta devise locale en Dollar Américain ?
                                 <buttonConfiguration key="configuration" style="plain" title="Traduire">
                                     <fontDescription key="titleFontDescription" name="AmericanTypewriter-Semibold" family="American Typewriter" pointSize="30"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="tappedTranslationButton:" destination="qLz-Lr-owi" eventType="touchUpInside" id="HfL-Kw-YtQ"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-translate" translatesAutoresizingMaskIntoConstraints="NO" id="n8h-IX-OLh">
                                 <rect key="frame" x="131.66666666666669" y="68.999999999999986" width="166.66666666666669" height="166.66666666666663"/>
@@ -254,45 +257,15 @@ vaut ta devise locale en Dollar Américain ?
                                     <constraint firstAttribute="height" priority="750" constant="166.66999999999999" id="OX4-ud-qKw"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="aua-Sy-t8P">
-                                <rect key="frame" x="20" y="408.66666666666674" width="390" height="300.33333333333326"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Français" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RbH-qs-Nb6">
-                                        <rect key="frame" x="0.0" y="0.0" width="390" height="75"/>
-                                        <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="17"/>
-                                        <color key="textColor" red="0.34507045149999999" green="0.44015038010000002" blue="0.967284739" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="A8x-P9-hzG">
-                                        <rect key="frame" x="0.0" y="75" width="390" height="75.333333333333314"/>
-                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="yes" keyboardType="alphabet" returnKeyType="go"/>
-                                    </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Anglais" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rnT-6B-V5l">
-                                        <rect key="frame" x="0.0" y="150.33333333333331" width="390" height="75"/>
-                                        <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="17"/>
-                                        <color key="textColor" red="0.34507045149999999" green="0.44015038010000002" blue="0.967284739" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mly-w3-qaE">
-                                        <rect key="frame" x="0.0" y="225.33333333333331" width="390" height="75"/>
-                                        <color key="backgroundColor" red="0.34507045149999999" green="0.44015038010000002" blue="0.967284739" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" name="AmericanTypewriter-Semibold" family="American Typewriter" pointSize="20"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Ium-qs-svA">
-                                <rect key="frame" x="20" y="255.66666666666663" width="390" height="143"/>
+                                <rect key="frame" x="20" y="255.66666666666663" width="390" height="133"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Rrm-Xu-z9I">
-                                        <rect key="frame" x="0.0" y="0.0" width="390" height="143"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="133"/>
                                         <string key="text">Do you parles anglais ?
 🇬🇧
 1. Ecris ta phrase en français 🇫🇷;
-2. Valide...tu es bilingue ! Well done !</string>
+2. Valide...et tu es bilingue ! Well done !</string>
                                         <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="23"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -304,21 +277,55 @@ vaut ta devise locale en Dollar Américain ?
                                     <constraint firstItem="Rrm-Xu-z9I" firstAttribute="centerY" secondItem="Ium-qs-svA" secondAttribute="centerY" id="z5x-pd-Ipd"/>
                                 </constraints>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="aua-Sy-t8P">
+                                <rect key="frame" x="20" y="398.66666666666674" width="390" height="340.33333333333326"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Français" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RbH-qs-Nb6">
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="85"/>
+                                        <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="17"/>
+                                        <color key="textColor" red="0.34507045149999999" green="0.44015038010000002" blue="0.967284739" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CZj-XV-oRd">
+                                        <rect key="frame" x="0.0" y="85" width="390" height="85.333333333333314"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="yes" keyboardType="alphabet" returnKeyType="done"/>
+                                    </textView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Anglais" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rnT-6B-V5l">
+                                        <rect key="frame" x="0.0" y="170.33333333333331" width="390" height="85"/>
+                                        <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="17"/>
+                                        <color key="textColor" red="0.34507045149999999" green="0.44015038010000002" blue="0.967284739" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mly-w3-qaE">
+                                        <rect key="frame" x="0.0" y="255.33333333333331" width="390" height="85"/>
+                                        <color key="backgroundColor" red="0.34507045149999999" green="0.44015038010000002" blue="0.967284739" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="AmericanTypewriter-Semibold" family="American Typewriter" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="340.32999999999998" id="iyc-Fz-YRq"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="23J-lE-Nh6"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="MDb-mv-TEq" firstAttribute="top" secondItem="aua-Sy-t8P" secondAttribute="bottom" constant="50" id="1dc-D9-AVr"/>
+                            <constraint firstItem="MDb-mv-TEq" firstAttribute="top" secondItem="aua-Sy-t8P" secondAttribute="bottom" constant="20" id="1dc-D9-AVr"/>
                             <constraint firstItem="Ium-qs-svA" firstAttribute="centerX" secondItem="EPe-kL-1cI" secondAttribute="centerX" id="4aV-LK-lwf"/>
+                            <constraint firstItem="23J-lE-Nh6" firstAttribute="trailing" secondItem="aua-Sy-t8P" secondAttribute="trailing" constant="20" id="JP6-GU-e3m"/>
                             <constraint firstItem="aua-Sy-t8P" firstAttribute="leading" secondItem="23J-lE-Nh6" secondAttribute="leading" constant="20" id="JdG-Mn-TlL"/>
                             <constraint firstItem="23J-lE-Nh6" firstAttribute="bottom" secondItem="MDb-mv-TEq" secondAttribute="bottom" constant="30" id="Kku-Y2-6xz"/>
-                            <constraint firstItem="23J-lE-Nh6" firstAttribute="trailing" secondItem="aua-Sy-t8P" secondAttribute="trailing" constant="20" id="NXS-Am-Pff"/>
                             <constraint firstItem="n8h-IX-OLh" firstAttribute="top" secondItem="23J-lE-Nh6" secondAttribute="top" constant="10" id="OMP-Jm-WAq"/>
                             <constraint firstItem="Ium-qs-svA" firstAttribute="top" secondItem="n8h-IX-OLh" secondAttribute="bottom" constant="20" id="agU-NT-cR6"/>
                             <constraint firstItem="aua-Sy-t8P" firstAttribute="top" secondItem="Ium-qs-svA" secondAttribute="bottom" constant="10" id="fSQ-kV-Xns"/>
                             <constraint firstItem="MDb-mv-TEq" firstAttribute="leading" secondItem="23J-lE-Nh6" secondAttribute="leading" constant="20" id="gC4-pD-2oi"/>
-                            <constraint firstItem="aua-Sy-t8P" firstAttribute="top" secondItem="EPe-kL-1cI" secondAttribute="top" constant="408.66666666666674" id="iSz-Qh-QWy"/>
                             <constraint firstItem="Ium-qs-svA" firstAttribute="leading" secondItem="23J-lE-Nh6" secondAttribute="leading" constant="20" id="nl6-3u-bE0"/>
                             <constraint firstItem="23J-lE-Nh6" firstAttribute="trailing" secondItem="MDb-mv-TEq" secondAttribute="trailing" constant="20" id="vW6-wg-dlW"/>
                             <constraint firstItem="n8h-IX-OLh" firstAttribute="centerX" secondItem="EPe-kL-1cI" secondAttribute="centerX" id="x9t-08-18P"/>
@@ -330,8 +337,10 @@ vaut ta devise locale en Dollar Américain ?
                     <tabBarItem key="tabBarItem" title="Traduction" image="character.bubble" catalog="system" id="scE-V5-prM"/>
                     <navigationItem key="navigationItem" title="Traduction" id="CFC-zE-y2X"/>
                     <connections>
+                        <outlet property="presentationUIStackView" destination="Ium-qs-svA" id="G6U-uT-xUi"/>
                         <outlet property="toDisplayTranslationUITextView" destination="mly-w3-qaE" id="cxG-wh-JGK"/>
-                        <outlet property="toTranslateUITextField" destination="A8x-P9-hzG" id="KTH-uF-ZFa"/>
+                        <outlet property="toTranslateUITextView" destination="CZj-XV-oRd" id="6bd-7r-6YY"/>
+                        <outlet property="translationUIButton" destination="MDb-mv-TEq" id="sVf-uj-znD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Ek-Oh-5y5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -351,28 +360,34 @@ vaut ta devise locale en Dollar Américain ?
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="N2T-Ew-cbf">
-                                <rect key="frame" x="20" y="245.66666666666663" width="390" height="213.33333333333337"/>
-                                <color key="backgroundColor" red="0.2611362934" green="0.58149904009999998" blue="0.68381071090000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="T1Z-QV-t92"/>
-                                </constraints>
-                                <string key="text">
-Qu'est-ce qu'on est bien à New York City !
-🇺🇸
-Mais quel temps fait-il à la maison ? 
-🌧️☀️🌨️🌩️
-</string>
-                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="23"/>
-                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-weather" translatesAutoresizingMaskIntoConstraints="NO" id="vcN-Ib-TLM">
                                 <rect key="frame" x="131.66666666666669" y="68.999999999999986" width="166.66666666666669" height="166.66666666666663"/>
                                 <constraints>
                                     <constraint firstAttribute="height" priority="750" constant="166.66666666666663" id="t9G-yW-Bhq"/>
                                 </constraints>
                             </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="lTX-eg-FUt">
+                                <rect key="frame" x="20" y="245.66666666666663" width="390" height="213.33333333333337"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="HD8-Ln-qgk">
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="213.33333333333334"/>
+                                        <string key="text">Qu'est-ce qu'on est bien à New York City !
+🇺🇸
+Mais quel temps fait-il 
+à la maison ? 
+🌧️☀️🌨️🌩️</string>
+                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="23"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.2611362934" green="0.58149904009999998" blue="0.68381071090000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="HD8-Ln-qgk" firstAttribute="centerX" secondItem="lTX-eg-FUt" secondAttribute="centerX" id="JGm-U8-fpC"/>
+                                    <constraint firstItem="HD8-Ln-qgk" firstAttribute="centerY" secondItem="lTX-eg-FUt" secondAttribute="centerY" id="jX4-F5-f0a"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="xHx-xu-Hlc"/>
+                                </constraints>
+                            </stackView>
                             <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="4ue-tO-jjl">
                                 <rect key="frame" x="20" y="469" width="390" height="360"/>
                                 <subviews>
@@ -404,7 +419,7 @@ Mais quel temps fait-il à la maison ?
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </stackView>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mFy-xL-YC9">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mFy-xL-YC9">
                                                 <rect key="frame" x="197.66666666666663" y="0.0" width="192.33333333333337" height="120"/>
                                             </imageView>
                                         </subviews>
@@ -463,13 +478,13 @@ Mais quel temps fait-il à la maison ?
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="4ue-tO-jjl" firstAttribute="centerX" secondItem="KOg-Yh-fy4" secondAttribute="centerX" id="42g-S4-svz"/>
+                            <constraint firstItem="lTX-eg-FUt" firstAttribute="top" secondItem="vcN-Ib-TLM" secondAttribute="bottom" constant="10" id="Cvj-AR-7Sg"/>
+                            <constraint firstItem="4ue-tO-jjl" firstAttribute="top" secondItem="lTX-eg-FUt" secondAttribute="bottom" constant="10" id="JJc-NO-fUw"/>
                             <constraint firstItem="vcN-Ib-TLM" firstAttribute="centerX" secondItem="KOg-Yh-fy4" secondAttribute="centerX" id="QLp-tV-rrb"/>
-                            <constraint firstItem="4ue-tO-jjl" firstAttribute="top" secondItem="N2T-Ew-cbf" secondAttribute="bottom" constant="10" id="QdO-ng-8Ob"/>
-                            <constraint firstItem="N2T-Ew-cbf" firstAttribute="centerX" secondItem="KOg-Yh-fy4" secondAttribute="centerX" id="RZz-Ye-JtZ"/>
                             <constraint firstItem="4ue-tO-jjl" firstAttribute="leading" secondItem="DlF-C1-Luf" secondAttribute="leading" constant="20" id="a7A-Mb-VYP"/>
-                            <constraint firstItem="N2T-Ew-cbf" firstAttribute="top" secondItem="vcN-Ib-TLM" secondAttribute="bottom" constant="10" id="jEW-GV-zh5"/>
+                            <constraint firstItem="lTX-eg-FUt" firstAttribute="leading" secondItem="DlF-C1-Luf" secondAttribute="leading" constant="20" id="fli-2J-1QY"/>
                             <constraint firstItem="DlF-C1-Luf" firstAttribute="trailing" secondItem="4ue-tO-jjl" secondAttribute="trailing" constant="20" id="oDP-E5-Jid"/>
-                            <constraint firstItem="N2T-Ew-cbf" firstAttribute="leading" secondItem="DlF-C1-Luf" secondAttribute="leading" constant="20" id="vCR-ZF-7dk"/>
+                            <constraint firstItem="lTX-eg-FUt" firstAttribute="centerX" secondItem="KOg-Yh-fy4" secondAttribute="centerX" id="pX9-bG-lll"/>
                             <constraint firstItem="vcN-Ib-TLM" firstAttribute="top" secondItem="DlF-C1-Luf" secondAttribute="top" constant="10" id="yLt-2O-Tjj"/>
                             <constraint firstItem="DlF-C1-Luf" firstAttribute="bottom" secondItem="4ue-tO-jjl" secondAttribute="bottom" constant="20" id="ys5-a3-0YG"/>
                         </constraints>
@@ -481,6 +496,7 @@ Mais quel temps fait-il à la maison ?
                         <outlet property="firstCityWeatherDescriptionUILabel" destination="E15-ak-p0X" id="wS3-vK-qGi"/>
                         <outlet property="firstCityWeatherIconUIImageView" destination="mFy-xL-YC9" id="Ftv-Jt-5de"/>
                         <outlet property="firstCityWeatherTemperatureUILabel" destination="fso-kb-2fF" id="uug-ZF-Jdg"/>
+                        <outlet property="presentationUIStackView" destination="lTX-eg-FUt" id="Ak0-Oh-EyS"/>
                         <outlet property="secondCityNameUILabel" destination="oNk-lW-8bh" id="VQT-2o-sz6"/>
                         <outlet property="secondCityWeatherDescriptionUILabel" destination="i3d-nI-uk5" id="Q3L-BD-x9Z"/>
                         <outlet property="secondCityWeatherIconUIImageView" destination="gKf-xD-N8V" id="9DE-FO-0I3"/>
@@ -507,6 +523,9 @@ Mais quel temps fait-il à la maison ?
         <image name="logo-translate" width="166.66667175292969" height="166.66667175292969"/>
         <image name="logo-weather" width="166.66667175292969" height="166.66667175292969"/>
         <image name="sun.max" catalog="system" width="128" height="125"/>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

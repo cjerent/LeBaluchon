@@ -17,7 +17,7 @@ struct DataType: Decodable {
     let translations: [Translation]
 }
 
-struct Translation: Codable {
+struct Translation: Decodable {
     let translatedText: String?
 }
 
