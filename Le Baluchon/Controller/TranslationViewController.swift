@@ -13,7 +13,7 @@ class TranslationViewController: UIViewController {
  
     @IBOutlet weak var toTranslateUITextView: UITextView!
     @IBOutlet weak var toDisplayTranslationUITextView: UITextView!
-    
+    @IBOutlet weak var languageNameToTranslateUILabel: UILabel!
     @IBOutlet weak var translationUIButton: UIButton!
     
     @IBOutlet weak var presentationUIStackView: UIStackView!
@@ -24,7 +24,6 @@ class TranslationViewController: UIViewController {
         modifyStackViewStyle(of: presentationUIStackView)
         modifyTextViewStyle(of: toDisplayTranslationUITextView)
         modifyTextViewStyle(of: toTranslateUITextView)
-        
    }
    
 
@@ -43,15 +42,20 @@ class TranslationViewController: UIViewController {
     
     @IBAction func tappedTranslationButton(_ sender: UIButton) {
         translate.addTextToTranslate(of: toTranslateUITextView.text)
+        
+       
         displayTranslation()
     }
     
     func displayTranslation() {
+        
         translate.getTranslation { (success, translation ) in
             guard let translation = translation, success == true else {
                 
                 return
             }
+            
+            self.languageNameToTranslateUILabel.text = translation.detectedSourceLanguage
             self.updateTranslation(translation)
         }
     }
@@ -59,11 +63,15 @@ class TranslationViewController: UIViewController {
     private func updateTranslation(_ translation: Translation) {
         translate.reset()
         toDisplayTranslationUITextView.text = translation.translatedText
+        
+        
     }
     
     private func modifyStackViewStyle(of stackView: UIStackView) {
          stackView.layer.cornerRadius = 5.0
     }
+    
+
 
 
 }

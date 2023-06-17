@@ -265,8 +265,8 @@ vaut ta devise locale en Dollar Américain ?
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Rrm-Xu-z9I">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="53.5"/>
-                                        <string key="text">Do you parles anglais ?
-🇫🇷⇾🇬🇧</string>
+                                        <string key="text">Do you speak anglais ? 
+🇬🇧</string>
                                         <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="23"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -281,7 +281,7 @@ vaut ta devise locale en Dollar Américain ?
                             <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="aua-Sy-t8P">
                                 <rect key="frame" x="20" y="213.5" width="335" height="294.5"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Français" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RbH-qs-Nb6">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Écris ta phrase dans la langue de ton choix ici:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RbH-qs-Nb6">
                                         <rect key="frame" x="0.0" y="0.0" width="335" height="73.5"/>
                                         <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="17"/>
                                         <color key="textColor" red="0.34507045149999999" green="0.44015038010000002" blue="0.967284739" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -294,7 +294,7 @@ vaut ta devise locale en Dollar Américain ?
                                         <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="yes" keyboardType="alphabet" returnKeyType="done"/>
                                     </textView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Anglais" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rnT-6B-V5l">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Anglais 🇬🇧" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rnT-6B-V5l">
                                         <rect key="frame" x="0.0" y="147.5" width="335" height="73.5"/>
                                         <fontDescription key="fontDescription" name="AmericanTypewriter-Bold" family="American Typewriter" pointSize="17"/>
                                         <color key="textColor" red="0.34507045149999999" green="0.44015038010000002" blue="0.967284739" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -335,6 +335,7 @@ vaut ta devise locale en Dollar Américain ?
                     <tabBarItem key="tabBarItem" title="Traduction" image="character.bubble" catalog="system" id="scE-V5-prM"/>
                     <navigationItem key="navigationItem" title="Traduction" id="CFC-zE-y2X"/>
                     <connections>
+                        <outlet property="languageNameToTranslateUILabel" destination="RbH-qs-Nb6" id="Ace-xK-5bL"/>
                         <outlet property="presentationUIStackView" destination="Ium-qs-svA" id="G6U-uT-xUi"/>
                         <outlet property="toDisplayTranslationUITextView" destination="mly-w3-qaE" id="cxG-wh-JGK"/>
                         <outlet property="toTranslateUITextView" destination="CZj-XV-oRd" id="6bd-7r-6YY"/>

@@ -29,6 +29,7 @@
 		527528D22A1D358B00C3855A /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527528D12A1D358B00C3855A /* WeatherViewController.swift */; };
 		5297033B2A39FA8A00706545 /* WeatherCityList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5297033A2A39FA8A00706545 /* WeatherCityList.swift */; };
 		5297033D2A3A0AFB00706545 /* String+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5297033C2A3A0AFB00706545 /* String+extension.swift */; };
+		529703412A3E0F3800706545 /* TranslationLanguagesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529703402A3E0F3800706545 /* TranslationLanguagesList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		527528D12A1D358B00C3855A /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		5297033A2A39FA8A00706545 /* WeatherCityList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCityList.swift; sourceTree = "<group>"; };
 		5297033C2A3A0AFB00706545 /* String+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+extension.swift"; sourceTree = "<group>"; };
+		529703402A3E0F3800706545 /* TranslationLanguagesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationLanguagesList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 				521DC1242A38650C008C3D8C /* TranslationService.swift */,
 				521DC1262A38682A008C3D8C /* Translation.swift */,
 				5297033C2A3A0AFB00706545 /* String+extension.swift */,
+				529703402A3E0F3800706545 /* TranslationLanguagesList.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 				527528D22A1D358B00C3855A /* WeatherViewController.swift in Sources */,
 				5297033B2A39FA8A00706545 /* WeatherCityList.swift in Sources */,
 				527528B62A1CF9B900C3855A /* SceneDelegate.swift in Sources */,
+				529703412A3E0F3800706545 /* TranslationLanguagesList.swift in Sources */,
 				527528CE2A1D355400C3855A /* ExchangeRateViewController.swift in Sources */,
 				521DC1272A38682A008C3D8C /* Translation.swift in Sources */,
 				521DC1232A3794D5008C3D8C /* ApiKeys.swift in Sources */,
