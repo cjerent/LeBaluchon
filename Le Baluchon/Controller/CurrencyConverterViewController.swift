@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ExchangeRateViewController: UIViewController {
+class CurrencyConverterViewController: UIViewController {
     
     @IBOutlet weak var numberTextField: UITextField!
     @IBOutlet weak var currencyPickerView: UIPickerView!
@@ -31,13 +31,13 @@ class ExchangeRateViewController: UIViewController {
 
 
 
-extension ExchangeRateViewController: UIPickerViewDataSource {
+extension CurrencyConverterViewController: UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        currencies.count
+        currenciesListJSON.count
     }
     
     
@@ -49,7 +49,7 @@ extension UIColor {
     static let customViolet = UIColor(red: 88/255.0, green: 112/255.0, blue: 247/255.0, alpha: 1)
 }
 
-extension ExchangeRateViewController: UIPickerViewDelegate {
+extension CurrencyConverterViewController: UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
     
@@ -59,7 +59,7 @@ extension ExchangeRateViewController: UIPickerViewDelegate {
             pickerLabel?.font = UIFont(name: "American Typewriter", size: 25)
             pickerLabel?.textAlignment = .center
         }
-        pickerLabel?.text = currencies[row]
+        pickerLabel?.text = currenciesListJSON[row]
         pickerLabel?.textColor = UIColor.customViolet
         return pickerLabel!
     }
