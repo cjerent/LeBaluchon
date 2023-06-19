@@ -107,7 +107,7 @@
         <!--Taux de change-->
         <scene sceneID="1rk-hM-YJP">
             <objects>
-                <viewController id="j3q-Me-RlS" customClass="ExchangeRateViewController" customModule="Le_Baluchon" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="j3q-Me-RlS" customClass="CurrencyConverterViewController" customModule="Le_Baluchon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ymk-xb-HwB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -154,8 +154,8 @@ vaut ta devise locale en Dollar Américain ?
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                                 <connections>
-                                                    <outlet property="dataSource" destination="j3q-Me-RlS" id="bCH-aY-C0r"/>
-                                                    <outlet property="delegate" destination="j3q-Me-RlS" id="tzq-WI-9q9"/>
+                                                    <outlet property="dataSource" destination="j3q-Me-RlS" id="qB3-c0-H4w"/>
+                                                    <outlet property="delegate" destination="j3q-Me-RlS" id="M4g-qS-Rni"/>
                                                 </connections>
                                             </pickerView>
                                         </subviews>
@@ -180,6 +180,9 @@ vaut ta devise locale en Dollar Américain ?
                                     <fontDescription key="titleFontDescription" name="AmericanTypewriter-Semibold" family="American Typewriter" pointSize="30"/>
                                     <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="tappedConvertButton:" destination="j3q-Me-RlS" eventType="touchUpInside" id="HRe-Ha-TRA"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-rates" translatesAutoresizingMaskIntoConstraints="NO" id="pEu-s7-Oim">
                                 <rect key="frame" x="104.5" y="30" width="166.5" height="100"/>
@@ -218,9 +221,10 @@ vaut ta devise locale en Dollar Américain ?
                     <tabBarItem key="tabBarItem" title="Taux de change" image="dollarsign.square" catalog="system" id="OQS-uo-yj7"/>
                     <navigationItem key="navigationItem" title="Taux de change" id="d6q-Vz-Xy3"/>
                     <connections>
-                        <outlet property="convertButton" destination="nPZ-Rq-VXY" id="y84-ML-PPn"/>
-                        <outlet property="currencyPickerView" destination="nzl-Fz-eVc" id="w20-b2-jwr"/>
-                        <outlet property="numberTextField" destination="1Fb-xE-vxn" id="dqp-2V-NUd"/>
+                        <outlet property="convertUIButton" destination="nPZ-Rq-VXY" id="dNY-fi-kV1"/>
+                        <outlet property="currenciesListUIPickerView" destination="nzl-Fz-eVc" id="AxK-FA-jZD"/>
+                        <outlet property="numberConvertedUITextView" destination="RdN-Ey-1nH" id="HiC-w4-abt"/>
+                        <outlet property="numberToConvertUITextField" destination="1Fb-xE-vxn" id="NbR-CR-vuA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JtT-cH-eQx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -292,7 +296,7 @@ vaut ta devise locale en Dollar Américain ?
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <color key="textColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="20"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="yes" keyboardType="alphabet" returnKeyType="done"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" returnKeyType="done"/>
                                     </textView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Anglais 🇬🇧" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rnT-6B-V5l">
                                         <rect key="frame" x="0.0" y="147.5" width="335" height="73.5"/>

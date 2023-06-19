@@ -9,27 +9,75 @@ import UIKit
 
 class CurrencyConverterViewController: UIViewController {
     
-    @IBOutlet weak var numberTextField: UITextField!
-    @IBOutlet weak var currencyPickerView: UIPickerView!
-    @IBOutlet weak var convertButton: UIButton!
+   
+    
+    @IBOutlet weak var numberToConvertUITextField: UITextField!
+    @IBOutlet weak var currenciesListUIPickerView: UIPickerView!
+    @IBOutlet weak var convertUIButton: UIButton!
+    @IBOutlet weak var numberConvertedUITextView: UITextView!
+    
+    let converter = ConverterService()
     
     override func viewDidLoad() {
       super.viewDidLoad()
 
       let myColor = UIColor.customViolet
-        numberTextField.layer.borderColor = myColor.cgColor
-        numberTextField.layer.cornerRadius = 5.0
-        numberTextField.layer.borderWidth = 1.0
-        convertButton.layer.cornerRadius = 5.0
+        numberToConvertUITextField.layer.borderColor = myColor.cgColor
+        numberToConvertUITextField.layer.cornerRadius = 5.0
+        numberToConvertUITextField.layer.borderWidth = 1.0
+        convertUIButton.layer.cornerRadius = 5.0
+        
+//        converter.getConversionRate()
 
    }
     
     @IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer) {
-        numberTextField.resignFirstResponder()
+        numberToConvertUITextField.resignFirstResponder()
+    }
+    
+    func displayConversion() {
+        converter.getConversion { (success, conversion ) in
+            guard let conversion = conversion, success == true else {
+                return
+            }
+    //afficher resultat [string:Double] en string avec uniquement le montant converti
+            var mystring = conversion.quotes?.values.description
+            print(mystring)
+            
+//            newstring?.remove(at: newstring!.startIndex)
+//            newstring?.dropFirst()
+//            print("my str : \(newstring)")
+            
+//            self.numberConvertedUITextView.text
+        
+        }
+    }
+    
+    
+    @IBAction func tappedConvertButton(_ sender: UIButton) {
+        converter.reset()
+        reset()
+        let number = numberToConvertUITextField.text
+        let currencyNameIndex = currenciesListUIPickerView.selectedRow(inComponent: 0)
+        let currencyName = currenciesListJSON[currencyNameIndex]
+        if let number = number {
+        converter.addNumberToConvert(of: number )
+        converter.addCurrencyNameToConvert(of: currencyName)
+        }
+       displayConversion()
+        
+        print(number ?? "")
+        print(currencyName)
+        
+        
+    }
+    
+    func reset() {
+        numberConvertedUITextView.text.removeAll()
     }
 }
 
-
+ 
 
 extension CurrencyConverterViewController: UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

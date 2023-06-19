@@ -12,5 +12,10 @@
 		<string>Nickainley-Normal.otf</string>
 		<string>alamain1.otf</string>
 	</array>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 </dict>
 </plist>

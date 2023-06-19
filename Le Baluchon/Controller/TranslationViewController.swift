@@ -42,8 +42,6 @@ class TranslationViewController: UIViewController {
     
     @IBAction func tappedTranslationButton(_ sender: UIButton) {
         translate.addTextToTranslate(of: toTranslateUITextView.text)
-        
-       
         displayTranslation()
     }
     
