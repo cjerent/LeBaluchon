@@ -32,6 +32,9 @@
 		529703412A3E0F3800706545 /* TranslationLanguagesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529703402A3E0F3800706545 /* TranslationLanguagesList.swift */; };
 		52D0CBD12A40487A0026F02A /* ConverterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D0CBD02A40487A0026F02A /* ConverterService.swift */; };
 		52D0CBD32A40488D0026F02A /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D0CBD22A40488D0026F02A /* Converter.swift */; };
+		52D0CBD72A4196970026F02A /* UIColor+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D0CBD62A4196970026F02A /* UIColor+extension.swift */; };
+		52D0CBD92A4197190026F02A /* CurrencyConverterViewController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D0CBD82A4197190026F02A /* CurrencyConverterViewController+extension.swift */; };
+		52D0CBDB2A41A8970026F02A /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D0CBDA2A41A8970026F02A /* Alert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +65,9 @@
 		529703402A3E0F3800706545 /* TranslationLanguagesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslationLanguagesList.swift; sourceTree = "<group>"; };
 		52D0CBD02A40487A0026F02A /* ConverterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterService.swift; sourceTree = "<group>"; };
 		52D0CBD22A40488D0026F02A /* Converter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Converter.swift; sourceTree = "<group>"; };
+		52D0CBD62A4196970026F02A /* UIColor+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+extension.swift"; sourceTree = "<group>"; };
+		52D0CBD82A4197190026F02A /* CurrencyConverterViewController+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CurrencyConverterViewController+extension.swift"; sourceTree = "<group>"; };
+		52D0CBDA2A41A8970026F02A /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +143,9 @@
 				527528CF2A1D356C00C3855A /* TranslationViewController.swift */,
 				527528D12A1D358B00C3855A /* WeatherViewController.swift */,
 				521DC11A2A372CF4008C3D8C /* Double+extension.swift */,
+				52D0CBD62A4196970026F02A /* UIColor+extension.swift */,
+				52D0CBD82A4197190026F02A /* CurrencyConverterViewController+extension.swift */,
+				52D0CBDA2A41A8970026F02A /* Alert.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -237,12 +246,15 @@
 				5297033B2A39FA8A00706545 /* WeatherCityList.swift in Sources */,
 				52D0CBD32A40488D0026F02A /* Converter.swift in Sources */,
 				527528B62A1CF9B900C3855A /* SceneDelegate.swift in Sources */,
+				52D0CBDB2A41A8970026F02A /* Alert.swift in Sources */,
 				529703412A3E0F3800706545 /* TranslationLanguagesList.swift in Sources */,
 				527528CE2A1D355400C3855A /* CurrencyConverterViewController.swift in Sources */,
+				52D0CBD92A4197190026F02A /* CurrencyConverterViewController+extension.swift in Sources */,
 				521DC1272A38682A008C3D8C /* Translation.swift in Sources */,
 				521DC1232A3794D5008C3D8C /* ApiKeys.swift in Sources */,
 				527528CC2A1D1CD600C3855A /* HomePageViewController.swift in Sources */,
 				521DC11B2A372CF4008C3D8C /* Double+extension.swift in Sources */,
+				52D0CBD72A4196970026F02A /* UIColor+extension.swift in Sources */,
 				5244FF152A2F6900003F9ED7 /* ConverterCurrencyList.swift in Sources */,
 				5297033D2A3A0AFB00706545 /* String+extension.swift in Sources */,
 				527528D02A1D356C00C3855A /* TranslationViewController.swift in Sources */,

@@ -10,29 +10,24 @@ import UIKit
 
 class ConverterService {
     static let fixerApi = valueForAPIKey(named: "fixerApi")
-    let conversionRateUrl = URL(string: "http://apilayer.net/api/live?access_key=e3fe8aa46ebb20eae8ae47803214411d")!
-    static var convertFrom: String = ""
-    static var convertTo: String = "USD"
-    var numberConverted: String = ""
+    let conversionRateUrl = URL(string: "http://apilayer.net/api/live?access_key=\(fixerApi)")!
+    var convertFrom: String = ""
+    let convertTo: String = "USD"
     var numberToConvert: String = ""
+    var resultConverted: Double = 0.0
     
     
     private var task: URLSessionDataTask?
     
-    func addNumberToConvert(of textField: String) {
-        
-        let numb = textField
-        numberToConvert.append(numb)
-        print("numb: \(numb)")
-        
-        
+    func addNumberToConvert(from textField: String) {
+        let numberTapped = textField
+        numberToConvert.append(numberTapped)
     }
     
     
-    func addCurrencyNameToConvert(of pickerView: String) {
-        ConverterService.convertFrom.append(pickerView)
-        print("currency from: \(ConverterService.convertFrom)")
-        
+    func addCurrencyNameToConvert(from pickerView: String) {
+        convertFrom.append("USD\(pickerView)")
+        print("currency from: \(convertFrom)")
     }
     
     func getConversion(callback: @escaping (Bool, CurrencyRates?) -> Void) {
@@ -54,23 +49,23 @@ class ConverterService {
                     for (key, value) in currencyDataJSON {
                         let currencyName = key
                         let currencyRate = value
-                        //                        print("name: \(name) qui vaut \(value) USD")
-                        if currencyName.contains("USD\(ConverterService.convertFrom)"){
-                            let result = Double(self.numberToConvert)!/currencyRate
-                            self.numberConverted.append(String(result))
+                    
+                        if currencyName.contains(self.convertFrom){
                             
-                            let conversionResult = CurrencyRates(quotes: [currencyName:result])
-                            callback(true, conversionResult)
-                            print("ConversionResult: \(conversionResult)")
+                            if let numberToConvert = Double(self.numberToConvert){
+                            self.resultConverted = numberToConvert/currencyRate
+                            } else {
+                                callback(false, nil)
+                            }
+                           
+                            let conversionResult = CurrencyRates(quotes: [self.convertTo:self.resultConverted])
+                                    callback(true, conversionResult)
+                                    print("ConversionResult: \(conversionResult)")
                             
-                        }
-                        
-                        
-                        
-                        
+
+                            }
                     }
                 }
-                
             }
         }
         if let task = task {
@@ -81,10 +76,9 @@ class ConverterService {
     
     func reset() {
         numberToConvert.removeAll()
-        ConverterService.convertTo.removeAll()
-        ConverterService.convertFrom.removeAll()
+        convertFrom.removeAll()
     }
-    
+
     
     
 }

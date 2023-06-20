@@ -12,4 +12,9 @@ extension Double {
     func toString() -> String {
         return String(format: "%.1f",self)
     }
+    
+    var roundedString:String {
+        return String(format: "%.4f", self)
+    }
 }
+

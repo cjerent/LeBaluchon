@@ -125,14 +125,14 @@ vaut ta devise locale en Dollar Américain ?
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="csk-jh-Wis">
+                            <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="csk-jh-Wis">
                                 <rect key="frame" x="20" y="245" width="335" height="263"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="QcK-Ge-mNt">
-                                        <rect key="frame" x="0.0" y="0.0" width="335" height="131.5"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="QcK-Ge-mNt">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="183"/>
                                         <subviews>
                                             <textField contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Fb-xE-vxn">
-                                                <rect key="frame" x="0.0" y="24.5" width="167.5" height="82.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="335" height="91.5"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="YxV-Mv-Qw7"/>
@@ -146,8 +146,8 @@ vaut ta devise locale en Dollar Américain ?
                                                     </mask>
                                                 </variation>
                                             </textField>
-                                            <pickerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nzl-Fz-eVc">
-                                                <rect key="frame" x="167.5" y="0.0" width="167.5" height="131.5"/>
+                                            <pickerView opaque="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="nzl-Fz-eVc">
+                                                <rect key="frame" x="0.0" y="91.5" width="335" height="91.5"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="textColor">
                                                         <color key="value" red="0.34507045149999999" green="0.44015038010000002" blue="0.967284739" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -161,8 +161,11 @@ vaut ta devise locale en Dollar Américain ?
                                         </subviews>
                                     </stackView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" editable="NO" text="12,676544689000" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="RdN-Ey-1nH">
-                                        <rect key="frame" x="0.0" y="131.5" width="335" height="131.5"/>
+                                        <rect key="frame" x="0.0" y="183" width="335" height="80"/>
                                         <color key="backgroundColor" red="0.34507045149999999" green="0.44015038010000002" blue="0.967284739" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="pfR-JF-WSg"/>
+                                        </constraints>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="29"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
