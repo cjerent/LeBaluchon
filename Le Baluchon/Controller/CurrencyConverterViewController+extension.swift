@@ -16,10 +16,14 @@ extension CurrencyConverterViewController: UIPickerViewDataSource {
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         currenciesListJSON.count
+    
     }
     
     
 }
+
+
+
 
 extension CurrencyConverterViewController: UIPickerViewDelegate {
     
@@ -31,9 +35,10 @@ extension CurrencyConverterViewController: UIPickerViewDelegate {
             pickerLabel?.font = UIFont(name: "American Typewriter", size: 25)
             pickerLabel?.textAlignment = .center
         }
-        let currenciesKeys: [String] = currenciesListJSON.map({ $0.key }).sorted()
-        pickerLabel?.text = currenciesKeys[row]
+
+        pickerLabel?.text = "\(currenciesListJSON[row].code) - \(currenciesListJSON[row].name)"
         pickerLabel?.textColor = UIColor.customViolet
         return pickerLabel!
     }
+    
 }

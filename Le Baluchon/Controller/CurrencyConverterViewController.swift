@@ -15,7 +15,7 @@ class CurrencyConverterViewController: UIViewController {
     @IBOutlet weak var convertUIButton: UIButton!
     @IBOutlet weak var numberConvertedUITextView: UITextView!
    
-    // ajouter nom de la monnaie au pickerview - grossir le montant converti - verifier les autres tailles - changer api
+    // ajouter nom de la monnaie au pickerview OK - Ajouter le timestamp -  grossir le montant converti - verifier les autres tailles - changer api
     
     let converter = ConverterService()
     
@@ -72,8 +72,7 @@ class CurrencyConverterViewController: UIViewController {
     
     private func getSelectedCurrency() -> String {
         let currencyNameIndex = currenciesListUIPickerView.selectedRow(inComponent: 0)
-        let currenciesKeys: [String] = currenciesListJSON.map({ $0.key }).sorted()
-        let currencyName = currenciesKeys[currencyNameIndex]
+        let currencyName = currenciesListJSON[currencyNameIndex].code
         return currencyName
     }
     

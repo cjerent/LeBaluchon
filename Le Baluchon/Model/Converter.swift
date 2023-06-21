@@ -10,3 +10,7 @@ import Foundation
 struct CurrencyRates: Decodable {
     let quotes: [String:Double]?
 }
+
+struct Symbols: Decodable {
+    let symbols: [String:String]?
+}
