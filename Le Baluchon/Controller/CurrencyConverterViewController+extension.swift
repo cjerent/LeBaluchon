@@ -28,7 +28,7 @@ extension CurrencyConverterViewController: UIPickerViewDataSource {
 extension CurrencyConverterViewController: UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
-    
+
         var pickerLabel: UILabel? = (view as? UILabel)
         if pickerLabel == nil {
             pickerLabel = UILabel()
@@ -37,7 +37,7 @@ extension CurrencyConverterViewController: UIPickerViewDelegate {
         }
 
         pickerLabel?.text = "\(currenciesListJSON[row].code) - \(currenciesListJSON[row].name)"
-        pickerLabel?.textColor = UIColor.customViolet
+        pickerLabel?.textColor = UIColor.customPurple
         return pickerLabel!
     }
     

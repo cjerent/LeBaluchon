@@ -27,10 +27,14 @@ class ConverterService {
     
     func addCurrencyNameToConvert(from pickerView: String) {
         convertFrom.append("USD\(pickerView)")
-        print("currency from: \(convertFrom)")
     }
     
-    func getConversion(callback: @escaping (Bool, CurrencyRates?) -> Void) {
+    func reset() {
+        numberToConvert.removeAll()
+        convertFrom.removeAll()
+    }
+    
+    func getConversion(callback: @escaping (Bool, CurrencyData?) -> Void) {
         let session = URLSession(configuration: .default)
         task = session.dataTask(with: conversionRateUrl) { data, response, error in
             DispatchQueue.main.async {
@@ -42,30 +46,8 @@ class ConverterService {
                     callback(false, nil)
                     return
                 }
-                let currencyDataJSON = try? JSONDecoder().decode(CurrencyRates.self, from: data);
-                
-                if let currencyDataJSON = currencyDataJSON?.quotes {
-                    
-                    for (key, value) in currencyDataJSON {
-                        let currencyName = key
-                        let currencyRate = value
-                    
-                        if currencyName.contains(self.convertFrom){
-                            
-                            if let numberToConvert = Double(self.numberToConvert){
-                            self.resultConverted = numberToConvert/currencyRate
-                            } else {
-                                callback(false, nil)
-                            }
-                           
-                            let conversionResult = CurrencyRates(quotes: [self.convertTo:self.resultConverted])
-                                    callback(true, conversionResult)
-                                    print("ConversionResult: \(conversionResult)")
-                            
-
-                            }
-                    }
-                }
+                self.createConversionResultToSend(data: data, callback: callback)
+                self.createTimestampToSend(data: data, callback: callback)
             }
         }
         if let task = task {
@@ -73,12 +55,43 @@ class ConverterService {
         }
     }
     
-    
-    func reset() {
-        numberToConvert.removeAll()
-        convertFrom.removeAll()
-    }
+    private func createTimestampToSend(data: Data, callback: @escaping (Bool, CurrencyData?) -> Void) {
+        let currencyDataJSON = try? JSONDecoder().decode(CurrencyData.self, from: data);
+        
+        if let currencyDataJSON = currencyDataJSON?.timestamp {
+            let timestamp = currencyDataJSON
 
+            let conversionDate = CurrencyData(timestamp: timestamp, quotes: nil)
+            callback(true, conversionDate)
+        }
+    }
+    
+    private func createConversionResultToSend(data: Data, callback: @escaping (Bool, CurrencyData?) -> Void) {
+        let currencyDataJSON = try? JSONDecoder().decode(CurrencyData.self, from: data);
+        
+        if let currencyDataJSON = currencyDataJSON?.quotes {
+            for (key, value) in currencyDataJSON {
+                let currencyName = key
+                let currencyRate = value
+                
+                if currencyName.contains(self.convertFrom){
+                    calculateConversionRate(with: currencyRate)
+                    let conversionResult = CurrencyData(timestamp: nil, quotes: [self.convertTo:self.resultConverted] )
+                    callback(true, conversionResult)
+                    print(conversionResult)
+                }
+            }
+        }
+    }
+    
+    private func calculateConversionRate(with currencyRate: Double) {
+        if let numberToConvert = Double(self.numberToConvert){
+            self.resultConverted = numberToConvert/currencyRate
+        }
+    }
     
     
+    private func formatDate() {
+        
+    }
 }

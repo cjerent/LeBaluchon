@@ -29,7 +29,7 @@ class TranslationViewController: UIViewController {
 
     
     private func modifyTextViewStyle(of textView: UITextView) {
-        let customPurple = UIColor.customViolet
+        let customPurple = UIColor.customPurple
         textView.layer.borderColor = customPurple.cgColor
          textView.layer.cornerRadius = 5.0
           textView.layer.borderWidth = 2.0
