@@ -12,11 +12,13 @@ import Foundation
 
 class WeatherService {
     
+    static var shared = WeatherService()
+    private init() {}
     static let openWeatherApi = valueForAPIKey(named: "openWeatherApi")
     
     // the list of cities included in the api is available in the WeatherCityList.swift file
     static var firstCityName: String = "New York"
-    static let secondCityName: String = "Sao Paulo"
+    static let secondCityName: String = "Paris"
     static let firstCityNameWithEncoding: String = firstCityName.encodeString()
     static let secondCityNameWithEncoding: String = secondCityName.encodeString()
     static let units: String = "metric"
@@ -127,6 +129,7 @@ class WeatherService {
     
     private func getWeatherDescription(url: URL, callback: @escaping (Bool, Weather?) -> Void ) {
         let session = URLSession(configuration: .default)
+
         task = session.dataTask(with: url) { data, response, error in
             DispatchQueue.main.async {
                 guard let data = data, error == nil else {
@@ -196,7 +199,6 @@ class WeatherService {
     
     private func createIconObjectToSend(with data: Data, callback: @escaping (Bool, Data?) -> Void  ) {
         let weatherData = try? JSONDecoder().decode(WeatherData.self, from: data)
-        
         if let weatherData = weatherData?.weather {
             for i in weatherData {
                 if let icon = i.icon {

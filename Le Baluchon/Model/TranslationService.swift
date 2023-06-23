@@ -10,15 +10,16 @@ import UIKit
 
 
 class TranslationService {
+    static var shared = TranslationService()
+    private init() {}
+    
     let googleTranslateAPI = valueForAPIKey(named: "googleTranslateAPI")
     let translationUrl = URL(string: "https://translation.googleapis.com/language/translate/v2")!
     let target: String = "en"
     let format: String = "text"
     
     var textToTranslate: String = ""
-    
-    
-    
+
     private var task: URLSessionDataTask?
     
     
@@ -30,6 +31,7 @@ class TranslationService {
         request.httpBody = body.data(using: .utf8)
         
         let session = URLSession(configuration: .default)
+        task?.cancel()
         task = session.dataTask(with: request) { data, response, error in
             DispatchQueue.main.async {
                 guard let data = data, error == nil else {
@@ -43,9 +45,9 @@ class TranslationService {
                 self.createObjectToSendToDisplay(with: data, callback: callback)
             }
         }
-        if let task = task {
-            task.resume()
-        }
+        
+            task?.resume()
+        
     }
     
     

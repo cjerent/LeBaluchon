@@ -8,8 +8,6 @@
 import UIKit
 
 class TranslationViewController: UIViewController {
-
-
  
     @IBOutlet weak var toTranslateUITextView: UITextView!
     @IBOutlet weak var toDisplayTranslationUITextView: UITextView!
@@ -17,7 +15,9 @@ class TranslationViewController: UIViewController {
     @IBOutlet weak var translationUIButton: UIButton!
     
     @IBOutlet weak var presentationUIStackView: UIStackView!
-    var translate = TranslationService()
+    @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
+    
+    //Ajouter alert si pas de traduction-
     
     override func viewDidLoad() {
       super.viewDidLoad()
@@ -25,9 +25,7 @@ class TranslationViewController: UIViewController {
         modifyTextViewStyle(of: toDisplayTranslationUITextView)
         modifyTextViewStyle(of: toTranslateUITextView)
    }
-   
 
-    
     private func modifyTextViewStyle(of textView: UITextView) {
         let customPurple = UIColor.customPurple
         textView.layer.borderColor = customPurple.cgColor
@@ -41,25 +39,26 @@ class TranslationViewController: UIViewController {
     }
     
     @IBAction func tappedTranslationButton(_ sender: UIButton) {
-        translate.addTextToTranslate(of: toTranslateUITextView.text)
+        self.showActivityIndicator(hide: translationUIButton, show: activityIndicatorView)
+        TranslationService.shared.addTextToTranslate(of: toTranslateUITextView.text)
         displayTranslation()
     }
     
-    func displayTranslation() {
+    private func displayTranslation() {
         
-        translate.getTranslation { (success, translation ) in
+        TranslationService.shared.getTranslation { (success, translation ) in
+            self.hideActivityIndicator(hide: self.activityIndicatorView, show: self.translationUIButton)
             guard let translation = translation, success == true else {
-                
+                self.showAlert(title: "Erreur", message: "Une traduction est déjà en cours 😥")
                 return
             }
-            
             self.languageNameToTranslateUILabel.text = translation.detectedSourceLanguage
             self.updateTranslation(translation)
         }
     }
     
     private func updateTranslation(_ translation: Translation) {
-        translate.reset()
+        TranslationService.shared.reset()
         toDisplayTranslationUITextView.text = translation.translatedText
         
         
@@ -68,8 +67,5 @@ class TranslationViewController: UIViewController {
     private func modifyStackViewStyle(of stackView: UIStackView) {
          stackView.layer.cornerRadius = 5.0
     }
-    
-
-
 
 }

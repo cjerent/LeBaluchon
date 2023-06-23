@@ -35,6 +35,7 @@
 		52D0CBD72A4196970026F02A /* UIColor+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D0CBD62A4196970026F02A /* UIColor+extension.swift */; };
 		52D0CBD92A4197190026F02A /* CurrencyConverterViewController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D0CBD82A4197190026F02A /* CurrencyConverterViewController+extension.swift */; };
 		52D0CBDB2A41A8970026F02A /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D0CBDA2A41A8970026F02A /* Alert.swift */; };
+		52D0CBDF2A459EEC0026F02A /* UIViewController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D0CBDE2A459EEC0026F02A /* UIViewController+extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		52D0CBD62A4196970026F02A /* UIColor+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+extension.swift"; sourceTree = "<group>"; };
 		52D0CBD82A4197190026F02A /* CurrencyConverterViewController+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CurrencyConverterViewController+extension.swift"; sourceTree = "<group>"; };
 		52D0CBDA2A41A8970026F02A /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		52D0CBDE2A459EEC0026F02A /* UIViewController+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +148,7 @@
 				52D0CBD62A4196970026F02A /* UIColor+extension.swift */,
 				52D0CBD82A4197190026F02A /* CurrencyConverterViewController+extension.swift */,
 				52D0CBDA2A41A8970026F02A /* Alert.swift */,
+				52D0CBDE2A459EEC0026F02A /* UIViewController+extension.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -244,6 +247,7 @@
 				527528B42A1CF9B900C3855A /* AppDelegate.swift in Sources */,
 				527528D22A1D358B00C3855A /* WeatherViewController.swift in Sources */,
 				5297033B2A39FA8A00706545 /* WeatherCityList.swift in Sources */,
+				52D0CBDF2A459EEC0026F02A /* UIViewController+extension.swift in Sources */,
 				52D0CBD32A40488D0026F02A /* Converter.swift in Sources */,
 				527528B62A1CF9B900C3855A /* SceneDelegate.swift in Sources */,
 				52D0CBDB2A41A8970026F02A /* Alert.swift in Sources */,

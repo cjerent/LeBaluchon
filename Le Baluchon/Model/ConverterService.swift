@@ -9,13 +9,15 @@ import Foundation
 import UIKit
 
 class ConverterService {
+    static var shared = ConverterService()
+    private init() {}
+    
     static let fixerApi = valueForAPIKey(named: "fixerApi")
     let conversionRateUrl = URL(string: "http://apilayer.net/api/live?access_key=\(fixerApi)")!
     var convertFrom: String = ""
     let convertTo: String = "USD"
     var numberToConvert: String = ""
     var resultConverted: Double = 0.0
-    
     
     private var task: URLSessionDataTask?
     
@@ -36,6 +38,7 @@ class ConverterService {
     
     func getConversion(callback: @escaping (Bool, CurrencyData?) -> Void) {
         let session = URLSession(configuration: .default)
+        task?.cancel()
         task = session.dataTask(with: conversionRateUrl) { data, response, error in
             DispatchQueue.main.async {
                 guard let data = data, error == nil else {
@@ -50,9 +53,7 @@ class ConverterService {
                 self.createTimestampToSend(data: data, callback: callback)
             }
         }
-        if let task = task {
-            task.resume()
-        }
+        task?.resume()
     }
     
     private func createTimestampToSend(data: Data, callback: @escaping (Bool, CurrencyData?) -> Void) {
@@ -60,9 +61,10 @@ class ConverterService {
         
         if let currencyDataJSON = currencyDataJSON?.timestamp {
             let timestamp = currencyDataJSON
-
+            
             let conversionDate = CurrencyData(timestamp: timestamp, quotes: nil)
             callback(true, conversionDate)
+            
         }
     }
     
@@ -73,12 +75,10 @@ class ConverterService {
             for (key, value) in currencyDataJSON {
                 let currencyName = key
                 let currencyRate = value
-                
                 if currencyName.contains(self.convertFrom){
                     calculateConversionRate(with: currencyRate)
                     let conversionResult = CurrencyData(timestamp: nil, quotes: [self.convertTo:self.resultConverted] )
                     callback(true, conversionResult)
-                    print(conversionResult)
                 }
             }
         }
@@ -91,7 +91,4 @@ class ConverterService {
     }
     
     
-    private func formatDate() {
-        
-    }
 }
