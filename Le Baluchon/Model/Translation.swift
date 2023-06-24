@@ -8,7 +8,7 @@
 import Foundation
 
 
-//for translation API
+//Struct for Google translation API
 struct TranslationData: Decodable {
     let data : DataType?
 }
@@ -22,7 +22,7 @@ struct Translation: Decodable {
     let detectedSourceLanguage: String?
 }
 
-// for language list JSON file
+// Struct for TranslationLanguageslist.swift
 struct LanguageList: Codable {
     let languages: [LanguageName]
 }

@@ -8,64 +8,81 @@
 import UIKit
 
 class TranslationViewController: UIViewController {
- 
+    
+    //    IBOutlets
     @IBOutlet weak var toTranslateUITextView: UITextView!
     @IBOutlet weak var toDisplayTranslationUITextView: UITextView!
     @IBOutlet weak var languageNameToTranslateUILabel: UILabel!
     @IBOutlet weak var translationUIButton: UIButton!
-    
     @IBOutlet weak var presentationUIStackView: UIStackView!
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     
-    //Ajouter alert si pas de traduction-
     
     override func viewDidLoad() {
-      super.viewDidLoad()
+        super.viewDidLoad()
         modifyStackViewStyle(of: presentationUIStackView)
         modifyTextViewStyle(of: toDisplayTranslationUITextView)
         modifyTextViewStyle(of: toTranslateUITextView)
-   }
-
-    private func modifyTextViewStyle(of textView: UITextView) {
-        let customPurple = UIColor.customPurple
-        textView.layer.borderColor = customPurple.cgColor
-         textView.layer.cornerRadius = 5.0
-          textView.layer.borderWidth = 2.0
     }
     
+    /// Dismiss keyboard if screen is tapped
+    /// - Parameter sender: UITapGestureRecognizer
     @IBAction func dismiss(_ sender: UITapGestureRecognizer) {
         toTranslateUITextView.resignFirstResponder()
         toDisplayTranslationUITextView.resignFirstResponder()
     }
     
+    /// Tapped translationUIButton
+    /// - Parameter sender: translationUIButton
     @IBAction func tappedTranslationButton(_ sender: UIButton) {
-        self.showActivityIndicator(hide: translationUIButton, show: activityIndicatorView)
-        TranslationService.shared.addTextToTranslate(of: toTranslateUITextView.text)
-        displayTranslation()
+        if toTranslateUITextView.text == "" {
+            self.showAlert(title: "⚠️", message: "Tu dois indiquer un mot ou une phrase à traduire 😅")
+        } else {
+            self.showActivityIndicator(hide: translationUIButton, show: activityIndicatorView)
+            TranslationService.shared.addTextToTranslate(of: toTranslateUITextView.text)
+            displayTranslation()
+        }
     }
     
+    /// Display translation info
     private func displayTranslation() {
-        
         TranslationService.shared.getTranslation { (success, translation ) in
             self.hideActivityIndicator(hide: self.activityIndicatorView, show: self.translationUIButton)
             guard let translation = translation, success == true else {
                 self.showAlert(title: "Erreur", message: "Une traduction est déjà en cours 😥")
                 return
             }
-            self.languageNameToTranslateUILabel.text = translation.detectedSourceLanguage
-            self.updateTranslation(translation)
+            self.displayDetectedLanguage(of: translation)
+            self.displayTranslatedSentence(of:translation)
         }
     }
     
-    private func updateTranslation(_ translation: Translation) {
+    /// Display translated sentence in toDisplayTranslationUITextView
+    /// - Parameter translation: translatedText
+    private func displayTranslatedSentence(of translation: Translation?) {
         TranslationService.shared.reset()
-        toDisplayTranslationUITextView.text = translation.translatedText
-        
-        
+        toDisplayTranslationUITextView.text = translation?.translatedText
     }
     
-    private func modifyStackViewStyle(of stackView: UIStackView) {
-         stackView.layer.cornerRadius = 5.0
+    /// Display dtected language in languageNameToTranslateUILabel
+    /// - Parameter translation: detectedSourceLanguage
+    private func displayDetectedLanguage(of translation: Translation?) {
+        languageNameToTranslateUILabel.text = translation?.detectedSourceLanguage
     }
-
+    
+    /// Custom UIStackView style
+    /// - Parameter stackView: UIStackView
+    private func modifyStackViewStyle(of stackView: UIStackView) {
+        stackView.layer.cornerRadius = 5.0
+    }
+    
+    /// Custom UITextView style
+    /// - Parameter textView: UITextView
+    private func modifyTextViewStyle(of textView: UITextView) {
+        let customPurple = UIColor.customPurple
+        textView.layer.borderColor = customPurple.cgColor
+        textView.layer.cornerRadius = 5.0
+        textView.layer.borderWidth = 2.0
+    }
+    
 }

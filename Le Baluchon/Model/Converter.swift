@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 struct CurrencyData: Decodable {
     let timestamp: Double?
     let quotes: [String:Double]?

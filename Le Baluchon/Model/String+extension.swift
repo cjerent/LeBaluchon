@@ -8,6 +8,8 @@
 import Foundation
 
 extension String {
+    /// Add percentage for space in string in url
+    /// - Returns: String
     func encodeString() -> String {
         return self.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
     }

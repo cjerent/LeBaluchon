@@ -9,33 +9,46 @@ import Foundation
 import UIKit
 
 class ConverterService {
+    // Singleton pattern
     static var shared = ConverterService()
     private init() {}
-    
+    // Api key
     static let fixerApi = valueForAPIKey(named: "fixerApi")
+    // Conversion api url
     let conversionRateUrl = URL(string: "http://apilayer.net/api/live?access_key=\(fixerApi)")!
+    // Converter properties
     var convertFrom: String = ""
     let convertTo: String = "USD"
     var numberToConvert: String = ""
     var resultConverted: Double = 0.0
     
+    //Unique task
     private var task: URLSessionDataTask?
     
+    //transformer la virgule en point
+    
+    /// Add number tapped in numberToConvert
+    /// - Parameter textField: addNumberToConvert in CurrencyConverterVC
     func addNumberToConvert(from textField: String) {
         let numberTapped = textField
         numberToConvert.append(numberTapped)
     }
     
-    
-    func addCurrencyNameToConvert(from pickerView: String) {
-        convertFrom.append("USD\(pickerView)")
+    /// Add selected currency in convertFrom
+    /// - Parameter pickerViewString: addCurrencyNameToConvert in CurrencyConverterVC
+    func addCurrencyNameToConvert(from pickerViewString: String) {
+        convertFrom.append("USD\(pickerViewString)")
     }
     
+    
+    /// Empty numberToConvert and convertFrom
     func reset() {
         numberToConvert.removeAll()
         convertFrom.removeAll()
     }
     
+    /// Get conversion rates API Call 
+    /// - Parameter callback: Bool and CurrencyData type
     func getConversion(callback: @escaping (Bool, CurrencyData?) -> Void) {
         let session = URLSession(configuration: .default)
         task?.cancel()
@@ -49,28 +62,32 @@ class ConverterService {
                     callback(false, nil)
                     return
                 }
-                self.createConversionResultToSend(data: data, callback: callback)
-                self.createTimestampToSend(data: data, callback: callback)
+                self.createConversionResultObjectToSend(data: data, callback: callback)
+                self.createTimestampObjectToSend(data: data, callback: callback)
             }
         }
         task?.resume()
     }
     
-    private func createTimestampToSend(data: Data, callback: @escaping (Bool, CurrencyData?) -> Void) {
+    /// Create timestamp object to send in callback
+    /// - Parameters:
+    ///   - data: API data timestamp
+    ///   - callback: Bool and CurrencyData type
+    private func createTimestampObjectToSend(data: Data, callback: @escaping (Bool, CurrencyData?) -> Void) {
         let currencyDataJSON = try? JSONDecoder().decode(CurrencyData.self, from: data);
-        
         if let currencyDataJSON = currencyDataJSON?.timestamp {
             let timestamp = currencyDataJSON
-            
             let conversionDate = CurrencyData(timestamp: timestamp, quotes: nil)
             callback(true, conversionDate)
-            
         }
     }
     
-    private func createConversionResultToSend(data: Data, callback: @escaping (Bool, CurrencyData?) -> Void) {
+    /// Create conversion result object to send in callback
+    /// - Parameters:
+    ///   - data: API data quotes
+    ///   - callback: Bool and CurrencyData type
+    private func createConversionResultObjectToSend(data: Data, callback: @escaping (Bool, CurrencyData?) -> Void) {
         let currencyDataJSON = try? JSONDecoder().decode(CurrencyData.self, from: data);
-        
         if let currencyDataJSON = currencyDataJSON?.quotes {
             for (key, value) in currencyDataJSON {
                 let currencyName = key
@@ -84,11 +101,12 @@ class ConverterService {
         }
     }
     
+    /// Calculate rate conversion - The free api only authorizes conversion from USD. So, you need to divide the USD to Convert from rate with numberToConvert to get the right result.
+    /// - Parameter currencyRate: Double from API
     private func calculateConversionRate(with currencyRate: Double) {
         if let numberToConvert = Double(self.numberToConvert){
             self.resultConverted = numberToConvert/currencyRate
         }
     }
-    
     
 }
