@@ -13,25 +13,30 @@ class ConverterService {
     static var shared = ConverterService()
     private init() {}
     // Api key
-    static let fixerApi = valueForAPIKey(named: "fixerApi")
+    static private let fixerApi = valueForAPIKey(named: "fixerApi")
     // Conversion api url
-    let conversionRateUrl = URL(string: "http://apilayer.net/api/live?access_key=\(fixerApi)")!
+    private let conversionRateUrl = URL(string: "http://apilayer.net/api/live?access_key=\(fixerApi)")!
     // Converter properties
-    var convertFrom: String = ""
+    private var convertFrom: String = ""
     let convertTo: String = "USD"
-    var numberToConvert: String = ""
-    var resultConverted: Double = 0.0
+    private var numberToConvert: Double = 0
+    private var resultConverted: Double = 0
     
-    //Unique task
+    //Task
     private var task: URLSessionDataTask?
+    //Session
+    private var session = URLSession(configuration: .default)
+    init(session: URLSession) {
+        self.session = session
+    }
     
-    //transformer la virgule en point
     
     /// Add number tapped in numberToConvert
     /// - Parameter textField: addNumberToConvert in CurrencyConverterVC
     func addNumberToConvert(from textField: String) {
         let numberTapped = textField
-        numberToConvert.append(numberTapped)
+        numberToConvert = numberTapped.doubleValue
+        
     }
     
     /// Add selected currency in convertFrom
@@ -43,14 +48,13 @@ class ConverterService {
     
     /// Empty numberToConvert and convertFrom
     func reset() {
-        numberToConvert.removeAll()
+        numberToConvert = 0.0
         convertFrom.removeAll()
     }
     
     /// Get conversion rates API Call 
     /// - Parameter callback: Bool and CurrencyData type
     func getConversion(callback: @escaping (Bool, CurrencyData?) -> Void) {
-        let session = URLSession(configuration: .default)
         task?.cancel()
         task = session.dataTask(with: conversionRateUrl) { data, response, error in
             DispatchQueue.main.async {
@@ -104,9 +108,7 @@ class ConverterService {
     /// Calculate rate conversion - The free api only authorizes conversion from USD. So, you need to divide the USD to Convert from rate with numberToConvert to get the right result.
     /// - Parameter currencyRate: Double from API
     private func calculateConversionRate(with currencyRate: Double) {
-        if let numberToConvert = Double(self.numberToConvert){
             self.resultConverted = numberToConvert/currencyRate
-        }
     }
     
 }

@@ -16,23 +16,10 @@ extension Double {
     }
     //transform Double to String with four figure after the decimal point
     var roundedString:String {
-        return String(format: "%.4f", self)
+        return String(format: "%.2f", self)
     }
 }
 
-//extension String {
-//    static let numberFormatter = NumberFormatter()
-//    var doubleValue: Double {
-//        String.numberFormatter.decimalSeparator = "."
-//        if let result =  String.numberFormatter.number(from: self) {
-//            return result.doubleValue
-//        } else {
-//            String.numberFormatter.decimalSeparator = ","
-//            if let result = String.numberFormatter.number(from: self) {
-//                return result.doubleValue
-//            }
-//        }
-//        return 0
-//    }
-}
+
+
 

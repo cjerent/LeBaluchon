@@ -19,8 +19,8 @@ class CurrencyConverterViewController: UIViewController {
     @IBOutlet weak var presentationUILabel: UILabel!
     
     // Custom colors
-    let myPurple = UIColor.customPurple
-    let myTurquoise = UIColor.customTurquoise
+    private let myPurple = UIColor.customPurple
+    private let myTurquoise = UIColor.customTurquoise
     
     override func viewDidLoad() {
         super.viewDidLoad()

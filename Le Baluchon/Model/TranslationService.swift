@@ -14,14 +14,14 @@ class TranslationService {
     static var shared = TranslationService()
     private init() {}
     // Api key
-    let googleTranslateAPI = valueForAPIKey(named: "googleTranslateAPI")
+    private let googleTranslateAPI = valueForAPIKey(named: "googleTranslateAPI")
     //Google translate api url
-    let translationUrl = URL(string: "https://translation.googleapis.com/language/translate/v2")!
+    private let translationUrl = URL(string: "https://translation.googleapis.com/language/translate/v2")!
     //Google translate api url params
-    let target: String = "en"
-    let format: String = "text"
+    private let target: String = "en"
+    private let format: String = "text"
     //// Translation properties
-    var textToTranslate: String = ""
+    private var textToTranslate: String = ""
     
     //Unique task
     private var task: URLSessionDataTask?

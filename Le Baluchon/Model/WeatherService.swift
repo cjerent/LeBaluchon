@@ -15,22 +15,22 @@ class WeatherService {
     static var shared = WeatherService()
     private init() {}
     // Api key
-    static let openWeatherApi = valueForAPIKey(named: "openWeatherApi")
+    static private let openWeatherApi = valueForAPIKey(named: "openWeatherApi")
     // the list of cities included in the api is available in the WeatherCityList.swift file
-    static var firstCityName: String = "New York"
-    static let secondCityName: String = "Paris"
+    static private var firstCityName: String = "New York"
+    static private let secondCityName: String = "Paris"
     // Add %20 for spaces in city name for the url
-    static let firstCityNameWithEncoding: String = firstCityName.encodeString()
-    static let secondCityNameWithEncoding: String = secondCityName.encodeString()
+    static private let firstCityNameWithEncoding: String = firstCityName.encodeString()
+    static private let secondCityNameWithEncoding: String = secondCityName.encodeString()
     // Weather api url params
-    static let units: String = "metric"
-    static let lang: String = "fr"
-    static let format: String = "text"
+    static private let units: String = "metric"
+    static private let lang: String = "fr"
+    static private let format: String = "text"
     
     //first city Weather api url
-    let firstCityUrl = URL(string: "https://api.openweathermap.org/data/2.5/weather?q=\(firstCityNameWithEncoding)&units=\(units)&lang=\(lang)&appid=\(openWeatherApi)")!
+    private let firstCityUrl = URL(string: "https://api.openweathermap.org/data/2.5/weather?q=\(firstCityNameWithEncoding)&units=\(units)&lang=\(lang)&appid=\(openWeatherApi)")!
     //second city Weather api url
-    let secondCityUrl = URL(string: "https://api.openweathermap.org/data/2.5/weather?q=\(secondCityNameWithEncoding)&units=\(units)&lang=\(lang)&appid=\(openWeatherApi)")!
+    private let secondCityUrl = URL(string: "https://api.openweathermap.org/data/2.5/weather?q=\(secondCityNameWithEncoding)&units=\(units)&lang=\(lang)&appid=\(openWeatherApi)")!
     
     //Unique task
     private var task: URLSessionDataTask?
