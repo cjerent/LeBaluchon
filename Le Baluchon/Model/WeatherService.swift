@@ -35,6 +35,13 @@ class WeatherService {
     //Unique task
     private var task: URLSessionDataTask?
     
+    private var session = URLSession(configuration: .default)
+    private var iconSession = URLSession(configuration: .default)
+    init(session: URLSession, iconSession: URLSession) {
+        self.session = session
+        self.iconSession = iconSession
+    }
+
     
     //======================
     // MARK: - Get city Name
@@ -57,7 +64,6 @@ class WeatherService {
     ///   - url: first city or second city api url
     ///   - callback: Bool and Name
     private func getCityName(url: URL, callback: @escaping (Bool, Name?) -> Void ) {
-        let session = URLSession(configuration: .default)
         task = session.dataTask(with: url) { data, response, error in
             DispatchQueue.main.async {
                 guard let data = data, error == nil else {
@@ -107,7 +113,6 @@ class WeatherService {
     ///   - url: first city or second city api url
     ///   - callback: Bool and Main
     private func getTemperature(url: URL, callback: @escaping (Bool, Main?) -> Void ) {
-        let session = URLSession(configuration: .default)
         task = session.dataTask(with: url) { data, response, error in
             DispatchQueue.main.async {
                 guard let data = data, error == nil else {
@@ -157,7 +162,6 @@ class WeatherService {
     ///   - url: first city or second city api url
     ///   - callback: Bool and Weather
     private func getWeatherDescription(url: URL, callback: @escaping (Bool, Weather?) -> Void ) {
-        let session = URLSession(configuration: .default)
         task = session.dataTask(with: url) { data, response, error in
             DispatchQueue.main.async {
                 guard let data = data, error == nil else {
@@ -212,7 +216,6 @@ class WeatherService {
     ///   - url: first city or second city api url
     ///   - callback: Bool and Data
     private func getIcon(url: URL, callback: @escaping (Bool, Data?) -> Void ) {
-        let session = URLSession(configuration: .default)
         task = session.dataTask(with: url) { data, response, error in
             DispatchQueue.main.async {
                 guard let data = data, error == nil else {
@@ -239,7 +242,7 @@ class WeatherService {
             for i in weatherData {
                 if let icon = i.icon {
                     let icon = icon
-                    URLSession.shared.dataTask(with: URL(string: "https://openweathermap.org/img/wn/\(icon)@2x.png")!) { iconData, _ , _ in
+                    iconSession.dataTask(with: URL(string: "https://openweathermap.org/img/wn/\(icon)@2x.png")!) { iconData, _ , _ in
                         if let iconData = iconData {
                             DispatchQueue.main.async {
                                 let icon = iconData

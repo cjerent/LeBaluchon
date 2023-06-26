@@ -39,6 +39,8 @@
 		52D0CBF42A483E400026F02A /* CurrencyRates.json in Resources */ = {isa = PBXBuildFile; fileRef = 52D0CBF32A483E400026F02A /* CurrencyRates.json */; };
 		52D0CBF62A483EE60026F02A /* FakeResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D0CBF52A483EE60026F02A /* FakeResponseData.swift */; };
 		52D0CBF82A4850680026F02A /* URLSessionFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D0CBF72A4850680026F02A /* URLSessionFake.swift */; };
+		52D0CBFD2A49AC440026F02A /* Translation.json in Resources */ = {isa = PBXBuildFile; fileRef = 52D0CBFC2A49AC440026F02A /* Translation.json */; };
+		52D0CC012A49BBE30026F02A /* Weather.json in Resources */ = {isa = PBXBuildFile; fileRef = 52D0CC002A49BBE20026F02A /* Weather.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +89,9 @@
 		52D0CBF32A483E400026F02A /* CurrencyRates.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CurrencyRates.json; sourceTree = "<group>"; };
 		52D0CBF52A483EE60026F02A /* FakeResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeResponseData.swift; sourceTree = "<group>"; };
 		52D0CBF72A4850680026F02A /* URLSessionFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionFake.swift; sourceTree = "<group>"; };
+		52D0CBFB2A49A9920026F02A /* Le Baluchon.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = "Le Baluchon.xctestplan"; sourceTree = "<group>"; };
+		52D0CBFC2A49AC440026F02A /* Translation.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Translation.json; sourceTree = "<group>"; };
+		52D0CC002A49BBE20026F02A /* Weather.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Weather.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +115,7 @@
 		527528A72A1CF9B900C3855A = {
 			isa = PBXGroup;
 			children = (
+				52D0CBFB2A49A9920026F02A /* Le Baluchon.xctestplan */,
 				527528B22A1CF9B900C3855A /* Le Baluchon */,
 				52D0CBE52A4838850026F02A /* Le BaluchonTests */,
 				527528B12A1CF9B900C3855A /* Products */,
@@ -199,7 +205,9 @@
 				52D0CBF52A483EE60026F02A /* FakeResponseData.swift */,
 				52D0CBF72A4850680026F02A /* URLSessionFake.swift */,
 				52D0CBEF2A483C1A0026F02A /* TranslationServiceTestCase.swift */,
+				52D0CBFC2A49AC440026F02A /* Translation.json */,
 				52D0CBF12A483C320026F02A /* WeatherServiceTestCase.swift */,
+				52D0CC002A49BBE20026F02A /* Weather.json */,
 			);
 			path = "Le BaluchonTests";
 			sourceTree = "<group>";
@@ -298,6 +306,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				52D0CBF42A483E400026F02A /* CurrencyRates.json in Resources */,
+				52D0CC012A49BBE30026F02A /* Weather.json in Resources */,
+				52D0CBFD2A49AC440026F02A /* Translation.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,6 +504,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 85ZAP462P7;
@@ -516,7 +527,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -528,6 +539,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 85ZAP462P7;
@@ -550,7 +562,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
-				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -569,10 +581,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "fr.jerentcharlene.Le-BaluchonTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Le Baluchon.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Le Baluchon";
 			};
 			name = Debug;
@@ -589,9 +604,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "fr.jerentcharlene.Le-BaluchonTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Le Baluchon.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Le Baluchon";
 			};
 			name = Release;

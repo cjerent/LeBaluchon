@@ -7,6 +7,8 @@
 
 import Foundation
 
+//FYI langue list is available in API https://translation.googleapis.com/language/translate/v2/languages
+
 let TranslationLanguagesListJSON: Data? = """
 {"languages": [
             {

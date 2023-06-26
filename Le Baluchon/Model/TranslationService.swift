@@ -23,9 +23,13 @@ class TranslationService {
     //// Translation properties
     private var textToTranslate: String = ""
     
-    //Unique task
+    //Task
     private var task: URLSessionDataTask?
-    
+    //Session
+    private var session = URLSession(configuration: .default)
+    init(session: URLSession) {
+        self.session = session
+    }
     
     /// Add text tapped in textToTranslate
     /// - Parameter textView: String to translate
@@ -47,7 +51,6 @@ class TranslationService {
         let body = "q=\(textToTranslate)&target=\(target)&format=\(format)&key=\(googleTranslateAPI)"
         request.httpBody = body.data(using: .utf8)
         
-        let session = URLSession(configuration: .default)
         task?.cancel()
         task = session.dataTask(with: request) { data, response, error in
             DispatchQueue.main.async {

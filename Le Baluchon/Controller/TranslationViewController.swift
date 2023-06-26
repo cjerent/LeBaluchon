@@ -53,7 +53,7 @@ class TranslationViewController: UIViewController {
                 return
             }
             self.displayDetectedLanguage(of: translation)
-            self.displayTranslatedSentence(of:translation)
+            self.displayTranslatedSentence(of: translation)
         }
     }
     
