@@ -8,9 +8,10 @@
 import Foundation
 
 class FakeResponseData {
-    static let responseOk = HTTPURLResponse(url: URL(string:"http://apilayer.net")!, statusCode: 200, httpVersion: nil, headerFields: nil)
-    static let responseKO = HTTPURLResponse(url: URL(string:"http://apilayer.net")!, statusCode: 500, httpVersion: nil, headerFields: nil)
-    
+    static let responseOk = HTTPURLResponse(url: URL(string:"https://test.com")!, statusCode: 200, httpVersion: nil, headerFields: nil)
+    static let responseKO = HTTPURLResponse(url: URL(string:"https://test.com")!, statusCode: 500, httpVersion: nil, headerFields: nil)
+ 
+    //    CONVERTER RESPONSE
     class ConverterServiceError: Error {}
     static let converterError = ConverterServiceError()
     
@@ -22,8 +23,8 @@ class FakeResponseData {
     }
     
     static let converterIncorrectData = "erreur".data(using: .utf8)!
-//    static let imageData = "image".data(using: .utf8)!
     
+    //    TRANLATION RESPONSE
     class TranslationServiceError: Error {}
     static let translationError = TranslationServiceError()
     
@@ -36,6 +37,7 @@ class FakeResponseData {
 
     static let translationIncorrectData = "erreur".data(using: .utf8)!
     
+    //    CITY NAME RESPONSE
     class WeatherServiceError: Error {}
     static let cityNameError = WeatherServiceError()
     
@@ -48,6 +50,7 @@ class FakeResponseData {
 
     static let cityNameIncorrectData = "erreur".data(using: .utf8)!
     
+    //    TEMPERATURE RESPONSE
     static let temperatureError = WeatherServiceError()
     
     static var temperatureCorrectData: Data {
@@ -59,6 +62,7 @@ class FakeResponseData {
 
     static let temperatureIncorrectData = "erreur".data(using: .utf8)!
     
+    //    WEATHER DESCRIPTION RESPONSE
     static let descriptionError = WeatherServiceError()
     
     static var descriptionCorrectData: Data {
@@ -70,6 +74,7 @@ class FakeResponseData {
 
     static let descriptionIncorrectData = "erreur".data(using: .utf8)!
     
+    //    ICON RESPONSE
     static let iconError = WeatherServiceError()
     
     static var iconCorrectData: Data {

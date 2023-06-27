@@ -202,12 +202,12 @@
 			children = (
 				52D0CBED2A483BD90026F02A /* ConverterServiceTestCase.swift */,
 				52D0CBF32A483E400026F02A /* CurrencyRates.json */,
-				52D0CBF52A483EE60026F02A /* FakeResponseData.swift */,
-				52D0CBF72A4850680026F02A /* URLSessionFake.swift */,
 				52D0CBEF2A483C1A0026F02A /* TranslationServiceTestCase.swift */,
 				52D0CBFC2A49AC440026F02A /* Translation.json */,
 				52D0CBF12A483C320026F02A /* WeatherServiceTestCase.swift */,
 				52D0CC002A49BBE20026F02A /* Weather.json */,
+				52D0CBF72A4850680026F02A /* URLSessionFake.swift */,
+				52D0CBF52A483EE60026F02A /* FakeResponseData.swift */,
 			);
 			path = "Le BaluchonTests";
 			sourceTree = "<group>";

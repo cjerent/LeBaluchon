@@ -94,17 +94,15 @@ class TranslationService {
     ///   - translatedText: String
     ///   - callback: Bool and Translation
     private func detectSourceLanguage( of JSONData: Data, detectedLanguage : String, translatedText: String,callback: @escaping (Bool, Translation?) -> Void  ) {
-        do {
-            let languageData = try? JSONDecoder().decode(LanguageList.self, from: JSONData)
-            if let languageData = languageData?.languages{
-                for i in languageData {
-                    if let code = i.language, let name = i.name {
-                        let languageCode = code
-                        let languageName = name
-                        if languageCode.contains(detectedLanguage) {
-                            let textTranslated = Translation(translatedText: translatedText, detectedSourceLanguage: languageName)
-                            callback(true, textTranslated)
-                        }
+        let languageData = try? JSONDecoder().decode(LanguageList.self, from: JSONData)
+        if let languageData = languageData?.languages{
+            for i in languageData {
+                if let code = i.language, let name = i.name {
+                    let languageCode = code
+                    let languageName = name
+                    if languageCode.contains(detectedLanguage) {
+                        let textTranslated = Translation(translatedText: translatedText, detectedSourceLanguage: languageName)
+                        callback(true, textTranslated)
                     }
                 }
             }

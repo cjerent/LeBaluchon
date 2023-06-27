@@ -32,14 +32,12 @@ class WeatherService {
     //second city Weather api url
     private let secondCityUrl = URL(string: "https://api.openweathermap.org/data/2.5/weather?q=\(secondCityNameWithEncoding)&units=\(units)&lang=\(lang)&appid=\(openWeatherApi)")!
     
-    //Unique task
+    //Task
     private var task: URLSessionDataTask?
-    
+    //Session
     private var session = URLSession(configuration: .default)
-    private var iconSession = URLSession(configuration: .default)
-    init(session: URLSession, iconSession: URLSession) {
+    init(session: URLSession) {
         self.session = session
-        self.iconSession = iconSession
     }
 
     
@@ -242,7 +240,7 @@ class WeatherService {
             for i in weatherData {
                 if let icon = i.icon {
                     let icon = icon
-                    iconSession.dataTask(with: URL(string: "https://openweathermap.org/img/wn/\(icon)@2x.png")!) { iconData, _ , _ in
+                    session.dataTask(with: URL(string: "https://openweathermap.org/img/wn/\(icon)@2x.png")!) { iconData, _ , _ in
                         if let iconData = iconData {
                             DispatchQueue.main.async {
                                 let icon = iconData

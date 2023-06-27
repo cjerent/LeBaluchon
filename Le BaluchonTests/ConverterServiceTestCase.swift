@@ -10,6 +10,7 @@ import XCTest
 
 class ConverterServiceTestCase: XCTestCase {
     
+    
     func testGetConversionShouldPostFailesCallbackIfError() {
         
     // Given
@@ -96,6 +97,6 @@ class ConverterServiceTestCase: XCTestCase {
 //        wait(for: [expectation], timeout: 0.01)
 
     }
-
+    
 
 }
