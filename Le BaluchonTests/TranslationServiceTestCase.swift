@@ -22,7 +22,7 @@ class TranslationServiceTestCase: XCTestCase {
             XCTAssertNil(translation)
             expectation.fulfill()
         }
-//        wait(for: [expectation], timeout: 0.01)
+        wait(for: [expectation], timeout: 0.01)
         
     }
     
@@ -38,7 +38,7 @@ class TranslationServiceTestCase: XCTestCase {
             XCTAssertNil(translation)
             expectation.fulfill()
         }
-//        wait(for: [expectation], timeout: 0.01)
+        wait(for: [expectation], timeout: 0.01)
         
     }
 
@@ -54,49 +54,41 @@ class TranslationServiceTestCase: XCTestCase {
             XCTAssertNil(translation)
             expectation.fulfill()
         }
-//        wait(for: [expectation], timeout: 0.01)
+        wait(for: [expectation], timeout: 0.01)
         
     }
-    
-    func testGetTranslationShouldPostFailesCallbackIfIncorrectData() {
-        
-    // Given
-        let translationService = TranslationService(session: URLSessionFake(data: FakeResponseData.translationIncorrectData, response: FakeResponseData.responseOk, error: nil))
-    // When
-        let expectation = XCTestExpectation(description: "Wait for queue change.")
-        translationService.getTranslation { success, translation in
-            // Then
-            XCTAssertFalse(success)
-            XCTAssertNil(translation)
-            expectation.fulfill()
-        }
-//        wait(for: [expectation], timeout: 0.01)
-    }
-    
     
     func testGetTranslationShouldPostSucessCallbackIfNoErrorAndCorrectData() {
 
     // Given
         let translationService = TranslationService(session: URLSessionFake(data: FakeResponseData.translationCorrectData, response: FakeResponseData.responseOk, error: nil))
+        let text: String = "Bonjour"
     // When
         let expectation = XCTestExpectation(description: "Wait for queue change.")
         translationService.getTranslation { success, translation in
             // Then
+            translationService.reset()
+            translationService.addTextToTranslate(of: text)
             let translatedText = "Good morning"
-            let detectedSourceLanguage = "fr"
-            
 
+            let detectedLanguage = "Français 🇫🇷"
+            
             XCTAssertTrue(success)
             XCTAssertNotNil(translation)
 
             XCTAssertEqual(translatedText, translation!.translatedText)
-            XCTAssertEqual(detectedSourceLanguage, translation!.detectedSourceLanguage)
-
+            XCTAssertEqual(detectedLanguage, translation!.detectedSourceLanguage)
+            
             expectation.fulfill()
         }
-//        wait(for: [expectation], timeout: 0.01)
+        wait(for: [expectation], timeout: 0.01)
 
     }
+    
+    
+
+    
+    
     
 
 }

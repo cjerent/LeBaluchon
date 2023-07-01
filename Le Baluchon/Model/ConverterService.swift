@@ -9,9 +9,7 @@ import Foundation
 import UIKit
 
 class ConverterService {
-    // Singleton pattern
-    static var shared = ConverterService()
-    private init() {}
+
     // Api key
     static private let fixerApi = valueForAPIKey(named: "fixerApi")
     // Conversion api url
@@ -66,7 +64,7 @@ class ConverterService {
                     callback(false, nil)
                     return
                 }
-                self.createConversionResultObjectToSend(data: data, callback: callback)
+                self.createConversionResultObjectToSend(with: data, callback: callback)
                 self.createTimestampObjectToSend(data: data, callback: callback)
             }
         }
@@ -90,13 +88,14 @@ class ConverterService {
     /// - Parameters:
     ///   - data: API data quotes
     ///   - callback: Bool and CurrencyData type
-    private func createConversionResultObjectToSend(data: Data, callback: @escaping (Bool, CurrencyData?) -> Void) {
+    private func createConversionResultObjectToSend(with data: Data, callback: @escaping (Bool, CurrencyData?) -> Void) {
         let currencyDataJSON = try? JSONDecoder().decode(CurrencyData.self, from: data);
         if let currencyDataJSON = currencyDataJSON?.quotes {
             for (key, value) in currencyDataJSON {
                 let currencyName = key
                 let currencyRate = value
                 if currencyName.contains(self.convertFrom){
+//                    resultConverted = numberToConvert/currencyRate
                     calculateConversionRate(with: currencyRate)
                     let conversionResult = CurrencyData(timestamp: nil, quotes: [self.convertTo:self.resultConverted] )
                     callback(true, conversionResult)
@@ -107,7 +106,7 @@ class ConverterService {
     
     /// Calculate rate conversion - The free api only authorizes conversion from USD. So, you need to divide the USD to Convert from rate with numberToConvert to get the right result.
     /// - Parameter currencyRate: Double from API
-    private func calculateConversionRate(with currencyRate: Double) {
+    func calculateConversionRate(with currencyRate: Double) {
             self.resultConverted = numberToConvert/currencyRate
     }
     

@@ -18,6 +18,7 @@ class CurrencyConverterViewController: UIViewController {
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     @IBOutlet weak var presentationUILabel: UILabel!
     
+    let converterService = ConverterService(session: URLSession(configuration: .default))
     // Custom colors
     private let myPurple = UIColor.customPurple
     private let myTurquoise = UIColor.customTurquoise
@@ -40,7 +41,7 @@ class CurrencyConverterViewController: UIViewController {
     /// Tapped convert button
     /// - Parameter sender: convertUIButton
     @IBAction func tappedConvertButton(_ sender: UIButton) {
-        ConverterService.shared.reset()
+        converterService.reset()
         resetDisplay()
         let numberTapped = numberToConvertUITextField.text
         if let numberTapped = numberTapped {
@@ -49,9 +50,9 @@ class CurrencyConverterViewController: UIViewController {
             } else {
                 // send number to convert
                 self.showActivityIndicator(hide: convertUIButton, show: activityIndicatorView)
-                ConverterService.shared.addNumberToConvert(from: numberTapped)
+                converterService.addNumberToConvert(from: numberTapped)
                 // send currency name to convert
-                ConverterService.shared.addCurrencyNameToConvert(from: getSelectedCurrency())
+                converterService.addCurrencyNameToConvert(from: getSelectedCurrency())
                 displayConversion()
             }
         }
@@ -59,7 +60,7 @@ class CurrencyConverterViewController: UIViewController {
     
     /// Display conversion info
     private func displayConversion() {
-        ConverterService.shared.getConversion { (success, conversion ) in
+        converterService.getConversion { (success, conversion ) in
             self.hideActivityIndicator(hide: self.activityIndicatorView, show: self.convertUIButton)
             guard let conversion = conversion, success == true else {
                 self.showAlert(title: "❌", message: "La conversion a échouée...Veuillez rééssayer 😥")
@@ -75,7 +76,7 @@ class CurrencyConverterViewController: UIViewController {
     private func displayConversionResult(of conversion: CurrencyData?) {
         if let conversion = conversion?.quotes?.values {
             let amount = Double(conversion.description.dropFirst().dropLast())
-            self.conversionResultUILabel.text = "\(amount?.roundedString ?? "") \(ConverterService.shared.convertTo)"
+            self.conversionResultUILabel.text = "\(amount?.roundedString ?? "") \(converterService.convertTo)"
         }
     }
     

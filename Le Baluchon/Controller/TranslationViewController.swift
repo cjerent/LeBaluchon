@@ -17,6 +17,7 @@ class TranslationViewController: UIViewController {
     @IBOutlet weak var presentationUIStackView: UIStackView!
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     
+    let translationService = TranslationService(session: URLSession(configuration: .default))
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,14 +40,14 @@ class TranslationViewController: UIViewController {
             self.showAlert(title: "⚠️", message: "Tu dois indiquer un mot ou une phrase à traduire 😅")
         } else {
             self.showActivityIndicator(hide: translationUIButton, show: activityIndicatorView)
-            TranslationService.shared.addTextToTranslate(of: toTranslateUITextView.text)
+            translationService.addTextToTranslate(of: toTranslateUITextView.text)
             displayTranslation()
         }
     }
     
     /// Display translation info
     private func displayTranslation() {
-        TranslationService.shared.getTranslation { (success, translation ) in
+        translationService.getTranslation { (success, translation ) in
             self.hideActivityIndicator(hide: self.activityIndicatorView, show: self.translationUIButton)
             guard let translation = translation, success == true else {
                 self.showAlert(title: "Erreur", message: "Une traduction est déjà en cours 😥")
@@ -60,7 +61,7 @@ class TranslationViewController: UIViewController {
     /// Display translated sentence in toDisplayTranslationUITextView
     /// - Parameter translation: translatedText
     private func displayTranslatedSentence(of translation: Translation?) {
-        TranslationService.shared.reset()
+        translationService.reset()
         toDisplayTranslationUITextView.text = translation?.translatedText
     }
     

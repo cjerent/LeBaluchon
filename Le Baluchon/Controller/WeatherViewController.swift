@@ -24,6 +24,7 @@ class WeatherViewController: UIViewController {
     @IBOutlet weak var firstCityIconActivityIndicatorView: UIActivityIndicatorView!
     @IBOutlet weak var secondCityIconActivityIndicatorView: UIActivityIndicatorView!
     
+    let weatherService = WeatherService(session: URLSession(configuration: .default))
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +42,8 @@ class WeatherViewController: UIViewController {
         displayBothDescription()
         
     }
+    
+    
     
     //======================
     // MARK: - ICON DISPLAY
@@ -72,10 +75,10 @@ class WeatherViewController: UIViewController {
     
     /// Display icons of both cities in firstCityWeatherIconUIImageView and secondCityWeatherIconUIImageView
     private func displayBothIcons() {
-        WeatherService.shared.getFirstCityWeatherIcon { (success, icon ) in
+        weatherService.getFirstCityWeatherIcon { (success, icon ) in
             self.updateIcon(self.firstCityWeatherIconUIImageView, with: success, and: icon, activityIndicator: self.firstCityIconActivityIndicatorView)
         }
-        WeatherService.shared.getSecondCityWeatherIcon { (success, icon ) in
+        weatherService.getSecondCityWeatherIcon { (success, icon ) in
             self.updateIcon(self.secondCityWeatherIconUIImageView, with: success, and: icon, activityIndicator: self.secondCityIconActivityIndicatorView)
         }
     }
@@ -114,10 +117,10 @@ class WeatherViewController: UIViewController {
     
     /// Display names of both cities in firstCityNameUILabel and secondCityNameUILabel
     private func displayBothNames() {
-        WeatherService.shared.getFirstCityName{ (success, cityName ) in
+        weatherService.getFirstCityName{ (success, cityName ) in
             self.updateName(self.firstCityNameUILabel, with: success, and: cityName)
         }
-        WeatherService.shared.getSecondCityName { (success, cityName ) in
+        weatherService.getSecondCityName { (success, cityName ) in
             self.updateName(self.secondCityNameUILabel, with: success, and: cityName)
         }
     }
@@ -153,10 +156,10 @@ class WeatherViewController: UIViewController {
     
     /// Display temperatures of both cities in firstCityWeatherTemperatureUILabel and secondCityWeatherTemperatureUILabel
     private func displayBothTemperatures() {
-        WeatherService.shared.getFirstCityTemperature {(success, temperature) in
+        weatherService.getFirstCityTemperature {(success, temperature) in
             self.updateTemperature(self.firstCityWeatherTemperatureUILabel, with: success, and: temperature)
         }
-        WeatherService.shared.getSecondCityTemperature { (success, temperature) in
+        weatherService.getSecondCityTemperature { (success, temperature) in
             self.updateTemperature(self.secondCityWeatherTemperatureUILabel, with: success, and: temperature)
         }
     }
@@ -188,10 +191,10 @@ class WeatherViewController: UIViewController {
     
     /// Display weather description of both cities in firstCityWeatherDescriptionUILabel and secondCityWeatherDescriptionUILabel
     private func displayBothDescription() {
-        WeatherService.shared.getFirstCityWeatherDescription { (success, description) in
+        weatherService.getFirstCityWeatherDescription { (success, description) in
             self.updateDescription(self.firstCityWeatherDescriptionUILabel, with: success, and: description)
         }
-        WeatherService.shared.getSecondCityWeatherDescription { (success, description) in
+        weatherService.getSecondCityWeatherDescription { (success, description) in
             self.updateDescription(self.secondCityWeatherDescriptionUILabel, with: success, and: description)
         }
     }

@@ -10,9 +10,7 @@ import UIKit
 
 
 class TranslationService {
-    // Singleton pattern
-    static var shared = TranslationService()
-    private init() {}
+
     // Api key
     private let googleTranslateAPI = valueForAPIKey(named: "googleTranslateAPI")
     //Google translate api url
