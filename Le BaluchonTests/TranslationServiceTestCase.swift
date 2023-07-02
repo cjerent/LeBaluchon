@@ -9,12 +9,12 @@
 import XCTest
 
 class TranslationServiceTestCase: XCTestCase {
-
+    
     func testGetTranslationShouldPostFailesCallbackIfError() {
         
-    // Given
+        // Given
         let translationService = TranslationService(session: URLSessionFake(data: nil, response: nil, error: FakeResponseData.translationError))
-    // When
+        // When
         let expectation = XCTestExpectation(description: "Wait for queue change.")
         translationService.getTranslation { success, translation in
             // Then
@@ -23,14 +23,13 @@ class TranslationServiceTestCase: XCTestCase {
             expectation.fulfill()
         }
         wait(for: [expectation], timeout: 0.01)
-        
     }
     
     func testGetTranslationShouldPostFailesCallbackIfNoData() {
         
-    // Given
+        // Given
         let translationService = TranslationService(session: URLSessionFake(data: nil, response: nil, error: nil))
-    // When
+        // When
         let expectation = XCTestExpectation(description: "Wait for queue change.")
         translationService.getTranslation { success, translation in
             // Then
@@ -39,14 +38,13 @@ class TranslationServiceTestCase: XCTestCase {
             expectation.fulfill()
         }
         wait(for: [expectation], timeout: 0.01)
-        
     }
-
+    
     func testGetTranslationShouldPostFailesCallbackIfIncorrectResponse() {
         
-    // Given
+        // Given
         let translationService = TranslationService(session: URLSessionFake(data: FakeResponseData.translationCorrectData, response: FakeResponseData.responseKO, error: nil))
-    // When
+        // When
         let expectation = XCTestExpectation(description: "Wait for queue change.")
         translationService.getTranslation { success, translation in
             // Then
@@ -59,36 +57,29 @@ class TranslationServiceTestCase: XCTestCase {
     }
     
     func testGetTranslationShouldPostSucessCallbackIfNoErrorAndCorrectData() {
-
-    // Given
+        
+        // Given
         let translationService = TranslationService(session: URLSessionFake(data: FakeResponseData.translationCorrectData, response: FakeResponseData.responseOk, error: nil))
         let text: String = "Bonjour"
-    // When
+        // When
         let expectation = XCTestExpectation(description: "Wait for queue change.")
         translationService.getTranslation { success, translation in
             // Then
             translationService.reset()
             translationService.addTextToTranslate(of: text)
             let translatedText = "Good morning"
-
+            
             let detectedLanguage = "Français 🇫🇷"
             
             XCTAssertTrue(success)
             XCTAssertNotNil(translation)
-
+            
             XCTAssertEqual(translatedText, translation!.translatedText)
             XCTAssertEqual(detectedLanguage, translation!.detectedSourceLanguage)
             
             expectation.fulfill()
         }
         wait(for: [expectation], timeout: 0.01)
-
-    }
+    }  
     
-    
-
-    
-    
-    
-
 }

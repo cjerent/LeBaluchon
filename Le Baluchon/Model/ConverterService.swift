@@ -64,8 +64,9 @@ class ConverterService {
                     callback(false, nil)
                     return
                 }
-                self.createConversionResultObjectToSend(with: data, callback: callback)
                 self.createTimestampObjectToSend(data: data, callback: callback)
+                self.createConversionResultObjectToSend(with: data, callback: callback)
+                
             }
         }
         task?.resume()
@@ -91,11 +92,11 @@ class ConverterService {
     private func createConversionResultObjectToSend(with data: Data, callback: @escaping (Bool, CurrencyData?) -> Void) {
         let currencyDataJSON = try? JSONDecoder().decode(CurrencyData.self, from: data);
         if let currencyDataJSON = currencyDataJSON?.quotes {
+           
             for (key, value) in currencyDataJSON {
                 let currencyName = key
                 let currencyRate = value
                 if currencyName.contains(self.convertFrom){
-//                    resultConverted = numberToConvert/currencyRate
                     calculateConversionRate(with: currencyRate)
                     let conversionResult = CurrencyData(timestamp: nil, quotes: [self.convertTo:self.resultConverted] )
                     callback(true, conversionResult)

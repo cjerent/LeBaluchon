@@ -176,11 +176,11 @@
 				527528CD2A1D355400C3855A /* CurrencyConverterViewController.swift */,
 				527528CF2A1D356C00C3855A /* TranslationViewController.swift */,
 				527528D12A1D358B00C3855A /* WeatherViewController.swift */,
-				521DC11A2A372CF4008C3D8C /* Double+extension.swift */,
-				52D0CBD62A4196970026F02A /* UIColor+extension.swift */,
-				52D0CBD82A4197190026F02A /* CurrencyConverterViewController+extension.swift */,
 				52D0CBDA2A41A8970026F02A /* Alert.swift */,
+				52D0CBD82A4197190026F02A /* CurrencyConverterViewController+extension.swift */,
 				52D0CBDE2A459EEC0026F02A /* UIViewController+extension.swift */,
+				52D0CBD62A4196970026F02A /* UIColor+extension.swift */,
+				521DC11A2A372CF4008C3D8C /* Double+extension.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";

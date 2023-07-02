@@ -24,7 +24,7 @@ class FakeResponseData {
     
     static let converterIncorrectData = "erreur".data(using: .utf8)!
     
-    //    TRANLATION RESPONSE
+    //    TRANSLATION RESPONSE
     class TranslationServiceError: Error {}
     static let translationError = TranslationServiceError()
     

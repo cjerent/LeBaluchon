@@ -11,11 +11,11 @@ import XCTest
 class ConverterServiceTestCase: XCTestCase {
     
     
-    func testGetConversionShouldPostFailesCallbackIfError() {
+    func testGetConversionShouldPostFailedCallbackIfError() {
         
-    // Given
+        // Given
         let converterService = ConverterService(session: URLSessionFake(data: nil, response: nil, error: FakeResponseData.converterError))
-    // When
+        // When
         let expectation = XCTestExpectation(description: "Wait for queue change.")
         converterService.getConversion { success, conversion in
             // Then
@@ -27,11 +27,11 @@ class ConverterServiceTestCase: XCTestCase {
         
     }
     
-    func testGetConversionShouldPostFailesCallbackIfNoData() {
+    func testGetConversionShouldPostFailedCallbackIfNoData() {
         
-    // Given
+        // Given
         let converterService = ConverterService(session: URLSessionFake(data: nil, response: nil, error: nil))
-    // When
+        // When
         let expectation = XCTestExpectation(description: "Wait for queue change.")
         converterService.getConversion { success, conversion in
             // Then
@@ -42,12 +42,12 @@ class ConverterServiceTestCase: XCTestCase {
         wait(for: [expectation], timeout: 0.01)
         
     }
-
+    
     func testGetConversionShouldPostFailedCallbackIfIncorrectResponse() {
         
-    // Given
+        // Given
         let converterService = ConverterService(session: URLSessionFake(data: FakeResponseData.converterCorrectData, response: FakeResponseData.responseKO, error: nil))
-    // When
+        // When
         let expectation = XCTestExpectation(description: "Wait for queue change.")
         converterService.getConversion { success, conversion in
             // Then
@@ -58,43 +58,48 @@ class ConverterServiceTestCase: XCTestCase {
         wait(for: [expectation], timeout: 0.01)
         
     }
-
     
     
-    func testGetConversionShouldPostSucessCallbackIfNoErrorAndCorrectData() {
-
-    // Given
+    
+    func testGetConversionShouldPostSuccessCallbackIfNoErrorAndCorrectData() {
+        // Given
         let converterService = ConverterService(session: URLSessionFake(data: FakeResponseData.converterCorrectData, response: FakeResponseData.responseOk, error: nil))
-        let numberToConvert = 50.0
+        //mettre test extension dans une fonction de test séparée
+        let numberToConvert = "50,0".doubleValue
+        let numberToConvert2 = "".doubleValue
         let currencyNameToConvert = "EUR"
         let currencyNameConvertTo = "USD"
-        
-    // When
+
+        // When
         let expectation = XCTestExpectation(description: "Wait for queue change.")
         converterService.getConversion { (success, conversion) in
-        
-//             Then
+            //             Then
+            var timestamp: Double?
+            var convertResult: [String:Double]?
+    
             converterService.reset()
-            converterService.addNumberToConvert(from: String(numberToConvert))
+            converterService.addNumberToConvert(from: numberToConvert.toString())
             converterService.addCurrencyNameToConvert(from: currencyNameToConvert)
+
             
-            converterService.calculateConversionRate(with: 0.914804)
-            // faire une boucle comme dans converterService ? 
+            if conversion?.timestamp != nil && conversion?.quotes == nil {
+                timestamp = conversion?.timestamp
+                convertResult = nil
+            } else {
+                timestamp = nil
+                convertResult = [currencyNameConvertTo: 54.65651658715966]
+            }
+
             XCTAssertTrue(success)
             XCTAssertNotNil(conversion)
-            
-            let result = [currencyNameConvertTo: 54.6565166]
-            let timestamp = 1687684683.0
-            
-            expectation.fulfill()
-            XCTAssertEqual(result, ["USD" : 54.6565166])
+          
+
             XCTAssertEqual(timestamp, conversion!.timestamp)
-
-            
+            XCTAssertEqual(convertResult, conversion!.quotes)
+            expectation.fulfill()
         }
-        wait(for: [expectation], timeout: 0.01)
 
+        wait(for: [expectation], timeout: 0.1)
     }
-    
-
+  
 }

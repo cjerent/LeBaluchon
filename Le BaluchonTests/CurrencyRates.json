@@ -6,5 +6,17 @@
     "source": "USD",
     "quotes": {
         "USDEUR": 0.914804,
+        "USDBND": 1.348011,
+        "USDBOB": 6.865931,
+        "USDBRL": 4.780702,
+        "USDBSD": 0.993546,
+        "USDBTC": 3.2772869e-5,
+        "USDBTN": 81.486703,
+        "USDBWP": 13.481943,
+        "USDBYN": 2.507896,
+        "USDBYR": 19600,
+        "USDBZD": 2.002746,
+        "USDCAD": 1.32385,
+        "USDCDF": 2410.000362,
     }
 }
