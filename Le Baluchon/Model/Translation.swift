@@ -23,11 +23,11 @@ struct Translation: Decodable {
 }
 
 // Struct for TranslationLanguageslist.swift
-struct LanguageList: Codable {
+struct LanguageList: Decodable {
     let languages: [LanguageName]
 }
 
-struct LanguageName: Codable {
+struct LanguageName: Decodable {
     let language: String?
     let name: String?
 }
