@@ -17,8 +17,8 @@ class ExtensionsTestCase: XCTestCase {
     func testGivenStringForUrlHaveSpaceWhenStringEncodeExtensionThenStringHavePercentageEncodingForUrl() {
         
         //When
-        var firstCityName: String = "New York"
-        var secondCityName: String = "Sao Paulo"
+        let firstCityName: String = "New York"
+        let secondCityName: String = "Sao Paulo"
         //When
         let firstCityNameWithEncoding: String = firstCityName.encodeString()
         let secondCityNameWithEncoding: String = secondCityName.encodeString()
@@ -35,9 +35,9 @@ class ExtensionsTestCase: XCTestCase {
         let numberStringPoint: String = "50.1"
         let emptyString: String = ""
         //When
-        var exNumberStringComma: Double = numberStringComma.doubleValue
-        var exNumberStringPoint: Double = numberStringPoint.doubleValue
-        var exEmptyString: Double = emptyString.doubleValue
+        let exNumberStringComma: Double = numberStringComma.doubleValue
+        let exNumberStringPoint: Double = numberStringPoint.doubleValue
+        let exEmptyString: Double = emptyString.doubleValue
         //Then
         XCTAssert(exNumberStringComma == 50.1)
         XCTAssert(exNumberStringPoint == 50.1)
