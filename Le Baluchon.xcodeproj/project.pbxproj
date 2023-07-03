@@ -32,7 +32,6 @@
 		52D0CBD32A40488D0026F02A /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D0CBD22A40488D0026F02A /* Converter.swift */; };
 		52D0CBD72A4196970026F02A /* UIColor+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D0CBD62A4196970026F02A /* UIColor+extension.swift */; };
 		52D0CBD92A4197190026F02A /* CurrencyConverterViewController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D0CBD82A4197190026F02A /* CurrencyConverterViewController+extension.swift */; };
-		52D0CBDB2A41A8970026F02A /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D0CBDA2A41A8970026F02A /* Alert.swift */; };
 		52D0CBDF2A459EEC0026F02A /* UIViewController+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D0CBDE2A459EEC0026F02A /* UIViewController+extension.swift */; };
 		52D0CBEE2A483BD90026F02A /* ConverterServiceTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D0CBED2A483BD90026F02A /* ConverterServiceTestCase.swift */; };
 		52D0CBF02A483C1A0026F02A /* TranslationServiceTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D0CBEF2A483C1A0026F02A /* TranslationServiceTestCase.swift */; };
@@ -82,7 +81,6 @@
 		52D0CBD22A40488D0026F02A /* Converter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Converter.swift; sourceTree = "<group>"; };
 		52D0CBD62A4196970026F02A /* UIColor+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+extension.swift"; sourceTree = "<group>"; };
 		52D0CBD82A4197190026F02A /* CurrencyConverterViewController+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CurrencyConverterViewController+extension.swift"; sourceTree = "<group>"; };
-		52D0CBDA2A41A8970026F02A /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		52D0CBDE2A459EEC0026F02A /* UIViewController+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+extension.swift"; sourceTree = "<group>"; };
 		52D0CBE42A4838850026F02A /* Le BaluchonTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Le BaluchonTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D0CBED2A483BD90026F02A /* ConverterServiceTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterServiceTestCase.swift; sourceTree = "<group>"; };
@@ -178,7 +176,6 @@
 				527528CD2A1D355400C3855A /* CurrencyConverterViewController.swift */,
 				527528CF2A1D356C00C3855A /* TranslationViewController.swift */,
 				527528D12A1D358B00C3855A /* WeatherViewController.swift */,
-				52D0CBDA2A41A8970026F02A /* Alert.swift */,
 				52D0CBD82A4197190026F02A /* CurrencyConverterViewController+extension.swift */,
 				52D0CBDE2A459EEC0026F02A /* UIViewController+extension.swift */,
 				52D0CBD62A4196970026F02A /* UIColor+extension.swift */,
@@ -328,7 +325,6 @@
 				52D0CBDF2A459EEC0026F02A /* UIViewController+extension.swift in Sources */,
 				52D0CBD32A40488D0026F02A /* Converter.swift in Sources */,
 				527528B62A1CF9B900C3855A /* SceneDelegate.swift in Sources */,
-				52D0CBDB2A41A8970026F02A /* Alert.swift in Sources */,
 				529703412A3E0F3800706545 /* TranslationLanguagesList.swift in Sources */,
 				527528CE2A1D355400C3855A /* CurrencyConverterViewController.swift in Sources */,
 				52D0CBD92A4197190026F02A /* CurrencyConverterViewController+extension.swift in Sources */,
