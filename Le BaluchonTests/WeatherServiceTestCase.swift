@@ -25,6 +25,7 @@ class WeatherServiceTestCase: XCTestCase {
             // Then
             XCTAssertFalse(success)
             XCTAssertNil(cityName)
+            
             expectation.fulfill()
         }
         wait(for: [expectation], timeout: 0.01)
@@ -40,6 +41,7 @@ class WeatherServiceTestCase: XCTestCase {
             // Then
             XCTAssertFalse(success)
             XCTAssertNil(cityName)
+            
             expectation.fulfill()
         }
         wait(for: [expectation], timeout: 0.01)
@@ -55,6 +57,7 @@ class WeatherServiceTestCase: XCTestCase {
             // Then
             XCTAssertFalse(success)
             XCTAssertNil(cityName)
+            
             expectation.fulfill()
         }
         wait(for: [expectation], timeout: 0.01)
@@ -93,6 +96,7 @@ class WeatherServiceTestCase: XCTestCase {
             // Then
             XCTAssertFalse(success)
             XCTAssertNil(cityName)
+            
             expectation.fulfill()
         }
         wait(for: [expectation], timeout: 0.01)
@@ -108,6 +112,7 @@ class WeatherServiceTestCase: XCTestCase {
             // Then
             XCTAssertFalse(success)
             XCTAssertNil(cityName)
+            
             expectation.fulfill()
         }
         wait(for: [expectation], timeout: 0.01)
@@ -123,6 +128,7 @@ class WeatherServiceTestCase: XCTestCase {
             // Then
             XCTAssertFalse(success)
             XCTAssertNil(cityName)
+            
             expectation.fulfill()
         }
         wait(for: [expectation], timeout: 0.01)
@@ -163,6 +169,7 @@ class WeatherServiceTestCase: XCTestCase {
             // Then
             XCTAssertFalse(success)
             XCTAssertNil(temperature)
+            
             expectation.fulfill()
         }
         wait(for: [expectation], timeout: 0.01)
@@ -179,6 +186,7 @@ class WeatherServiceTestCase: XCTestCase {
             // Then
             XCTAssertFalse(success)
             XCTAssertNil(temperature)
+            
             expectation.fulfill()
         }
         wait(for: [expectation], timeout: 0.01)
@@ -195,6 +203,7 @@ class WeatherServiceTestCase: XCTestCase {
             // Then
             XCTAssertFalse(success)
             XCTAssertNil(temperature)
+            
             expectation.fulfill()
         }
         wait(for: [expectation], timeout: 0.01)
@@ -202,7 +211,7 @@ class WeatherServiceTestCase: XCTestCase {
     }
     
     
-    func testGetFirstCityTemperatureShouldPostSucessCallbackIfNoErrorAndCorrectData() {
+    func testGetFirstCityTemperatureShouldPostSuccessCallbackIfNoErrorAndCorrectData() {
         // Given
         let weatherService = WeatherService(session: URLSessionFake(data: FakeResponseData.temperatureCorrectData, response: FakeResponseData.responseOk, error: nil))
         // When
@@ -232,6 +241,7 @@ class WeatherServiceTestCase: XCTestCase {
             // Then
             XCTAssertFalse(success)
             XCTAssertNil(temperature)
+            
             expectation.fulfill()
         }
         wait(for: [expectation], timeout: 0.01)
@@ -248,6 +258,7 @@ class WeatherServiceTestCase: XCTestCase {
             // Then
             XCTAssertFalse(success)
             XCTAssertNil(temperature)
+            
             expectation.fulfill()
         }
         wait(for: [expectation], timeout: 0.01)
@@ -264,6 +275,7 @@ class WeatherServiceTestCase: XCTestCase {
             // Then
             XCTAssertFalse(success)
             XCTAssertNil(temperature)
+            
             expectation.fulfill()
         }
         wait(for: [expectation], timeout: 0.01)
@@ -271,7 +283,7 @@ class WeatherServiceTestCase: XCTestCase {
     }
     
     
-    func testGetSecondCityTemperatureShouldPostSucessCallbackIfNoErrorAndCorrectData() {
+    func testGetSecondCityTemperatureShouldPostSuccessCallbackIfNoErrorAndCorrectData() {
         // Given
         let weatherService = WeatherService(session: URLSessionFake(data: FakeResponseData.temperatureCorrectData, response: FakeResponseData.responseOk, error: nil))
         // When
@@ -305,6 +317,7 @@ class WeatherServiceTestCase: XCTestCase {
             // Then
             XCTAssertFalse(success)
             XCTAssertNil(weatherDescription)
+            
             expectation.fulfill()
         }
         wait(for: [expectation], timeout: 0.01)
@@ -321,6 +334,7 @@ class WeatherServiceTestCase: XCTestCase {
             // Then
             XCTAssertFalse(success)
             XCTAssertNil(weatherDescription)
+            
             expectation.fulfill()
         }
         wait(for: [expectation], timeout: 0.01)
@@ -337,6 +351,7 @@ class WeatherServiceTestCase: XCTestCase {
             // Then
             XCTAssertFalse(success)
             XCTAssertNil(weatherDescription)
+            
             expectation.fulfill()
         }
         wait(for: [expectation], timeout: 0.01)
@@ -344,7 +359,7 @@ class WeatherServiceTestCase: XCTestCase {
     }
     
     
-    func testGetFirstCityWeatherDescriptionShouldPostSucessCallbackIfNoErrorAndCorrectData() {
+    func testGetFirstCityWeatherDescriptionShouldPostSuccessCallbackIfNoErrorAndCorrectData() {
         // Given
         let weatherService = WeatherService(session: URLSessionFake(data: FakeResponseData.descriptionCorrectData, response: FakeResponseData.responseOk, error: nil))
         // When
@@ -374,6 +389,7 @@ class WeatherServiceTestCase: XCTestCase {
             // Then
             XCTAssertFalse(success)
             XCTAssertNil(weatherDescription)
+            
             expectation.fulfill()
         }
         wait(for: [expectation], timeout: 0.01)
@@ -390,6 +406,7 @@ class WeatherServiceTestCase: XCTestCase {
             // Then
             XCTAssertFalse(success)
             XCTAssertNil(weatherDescription)
+            
             expectation.fulfill()
         }
         wait(for: [expectation], timeout: 0.01)
@@ -406,13 +423,14 @@ class WeatherServiceTestCase: XCTestCase {
             // Then
             XCTAssertFalse(success)
             XCTAssertNil(weatherDescription)
+            
             expectation.fulfill()
         }
         wait(for: [expectation], timeout: 0.01)
         
     }
     
-    func testGetSecondCityWeatherDescriptionShouldPostSucessCallbackIfNoErrorAndCorrectData() {
+    func testGetSecondCityWeatherDescriptionShouldPostSuccessCallbackIfNoErrorAndCorrectData() {
         // Given
         let weatherService = WeatherService(session: URLSessionFake(data: FakeResponseData.descriptionCorrectData, response: FakeResponseData.responseOk, error: nil))
         // When
@@ -436,7 +454,7 @@ class WeatherServiceTestCase: XCTestCase {
     //======================
     
     // First City
-    func testGetFirstCityWeatherIconShouldPostFailesCallbackIfError() {
+    func testGetFirstCityWeatherIconShouldPostFailedCallbackIfError() {
         
         // Given
         let weatherService = WeatherService(session: URLSessionFake(data: nil, response: nil, error: FakeResponseData.iconError))
@@ -446,13 +464,14 @@ class WeatherServiceTestCase: XCTestCase {
             // Then
             XCTAssertFalse(success)
             XCTAssertNil(weatherIcon)
+            
             expectation.fulfill()
         }
         wait(for: [expectation], timeout: 0.01)
         
     }
     
-    func testGetFirstCityWeatherIconShouldPostFailesCallbackIfNoData() {
+    func testGetFirstCityWeatherIconShouldPostFailedCallbackIfNoData() {
         
         // Given
         let weatherService = WeatherService(session: URLSessionFake(data: nil, response: nil, error: nil))
@@ -462,6 +481,7 @@ class WeatherServiceTestCase: XCTestCase {
             // Then
             XCTAssertFalse(success)
             XCTAssertNil(weatherIcon)
+            
             expectation.fulfill()
         }
         wait(for: [expectation], timeout: 0.01)
@@ -478,6 +498,7 @@ class WeatherServiceTestCase: XCTestCase {
             // Then
             XCTAssertFalse(success)
             XCTAssertNil(weatherIcon)
+            
             expectation.fulfill()
         }
         wait(for: [expectation], timeout: 0.01)
@@ -485,7 +506,7 @@ class WeatherServiceTestCase: XCTestCase {
     }
     
     
-    func testGetFirstCityWeatherIconShouldPostSucessCallbackIfNoErrorAndCorrectData() {
+    func testGetFirstCityWeatherIconShouldPostSuccessCallbackIfNoErrorAndCorrectData() {
         // Given
         let weatherService = WeatherService(session: URLSessionFake(data:FakeResponseData.iconCorrectData, response: FakeResponseData.responseOk, error: nil))
         // When
@@ -495,14 +516,15 @@ class WeatherServiceTestCase: XCTestCase {
             XCTAssertTrue(success)
             XCTAssertNotNil(weatherIcon)
             
-            expectation.fulfill()
             XCTAssertEqual(FakeResponseData.iconCorrectData, weatherIcon)
+            
+            expectation.fulfill()
         }
         wait(for: [expectation], timeout: 0.01)
     }
     
     // Second City
-    func testGetSecondCityWeatherIconShouldPostFailesCallbackIfError() {
+    func testGetSecondCityWeatherIconShouldPostFailedCallbackIfError() {
         
         // Given
         let weatherService = WeatherService(session: URLSessionFake(data: nil, response: nil, error: FakeResponseData.iconError))
@@ -512,13 +534,14 @@ class WeatherServiceTestCase: XCTestCase {
             // Then
             XCTAssertFalse(success)
             XCTAssertNil(weatherIcon)
+            
             expectation.fulfill()
         }
         wait(for: [expectation], timeout: 0.01)
         
     }
     
-    func testGetSecondCityWeatherIconShouldPostFailesCallbackIfNoData() {
+    func testGetSecondCityWeatherIconShouldPostFailedCallbackIfNoData() {
         
         // Given
         let weatherService = WeatherService(session: URLSessionFake(data: nil, response: nil, error: nil))
@@ -528,6 +551,7 @@ class WeatherServiceTestCase: XCTestCase {
             // Then
             XCTAssertFalse(success)
             XCTAssertNil(weatherIcon)
+            
             expectation.fulfill()
         }
         wait(for: [expectation], timeout: 0.01)
@@ -544,13 +568,14 @@ class WeatherServiceTestCase: XCTestCase {
             // Then
             XCTAssertFalse(success)
             XCTAssertNil(weatherIcon)
+            
             expectation.fulfill()
         }
         wait(for: [expectation], timeout: 0.01)
         
     }
     
-    func testGetSecondCityWeatherIconShouldPostSucessCallbackIfNoErrorAndCorrectData() {
+    func testGetSecondCityWeatherIconShouldPostSuccessCallbackIfNoErrorAndCorrectData() {
         // Given
         let weatherService = WeatherService(session: URLSessionFake(data:FakeResponseData.iconCorrectData, response: FakeResponseData.responseOk, error: nil))
         // When
@@ -560,27 +585,11 @@ class WeatherServiceTestCase: XCTestCase {
             XCTAssertTrue(success)
             XCTAssertNotNil(weatherIcon)
             
-            expectation.fulfill()
             XCTAssertEqual(FakeResponseData.iconCorrectData, weatherIcon)
+            
+            expectation.fulfill()
         }
         wait(for: [expectation], timeout: 0.01)
     }
-    
-    //======================
-    // MARK: - Weather service Extension tests
-    //======================
-    
-    func testStringEncodeExtension() {
-        var firstCityName: String = "New York"
-        var secondCityName: String = "Sao Paulo"
-        
-        let firstCityNameWithEncoding: String = firstCityName.encodeString()
-        let secondCityNameWithEncoding: String = secondCityName.encodeString()
-        
-        XCTAssertEqual(firstCityNameWithEncoding, "New%20York")
-        XCTAssertEqual(secondCityNameWithEncoding, "Sao%20Paulo")
-        
-    }
-    
     
 }

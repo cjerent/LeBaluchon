@@ -11,9 +11,7 @@ import Foundation
 
 
 class WeatherService {
-    // Singleton pattern
-//    static var shared = WeatherService()
-//    private init() {}
+
     // Api key
     static private let openWeatherApi = valueForAPIKey(named: "openWeatherApi")
     // the list of cities included in the api is available in the WeatherCityList.swift file

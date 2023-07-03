@@ -17,8 +17,8 @@ class ConverterService {
     // Converter properties
     private var convertFrom: String = ""
     let convertTo: String = "USD"
-    private var numberToConvert: Double = 0
-    private var resultConverted: Double = 0
+    private var numberToConvert: Double = 0.0
+    private var resultConverted: Double = 0.0
     
     //Task
     private var task: URLSessionDataTask?
