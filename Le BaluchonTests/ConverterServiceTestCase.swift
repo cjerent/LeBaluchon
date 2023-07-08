@@ -20,7 +20,6 @@ class ConverterServiceTestCase: XCTestCase {
             // Then
             XCTAssertFalse(success)
             XCTAssertNil(conversion)
-            
             expectation.fulfill()
         }
         wait(for: [expectation], timeout: 0.01)

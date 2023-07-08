@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3Io-J1-4JC">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -192,11 +193,11 @@ vaut ta devise locale en Dollar Américain ?
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="Twn-45-NxT"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Convertir">
-                                    <fontDescription key="titleFontDescription" name="AmericanTypewriter-Semibold" family="American Typewriter" pointSize="30"/>
-                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </buttonConfiguration>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter-Semibold" family="American Typewriter" pointSize="30"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Convertir">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                                 <connections>
                                     <action selector="tappedConvertButton:" destination="j3q-Me-RlS" eventType="touchUpInside" id="HRe-Ha-TRA"/>
                                 </connections>
@@ -271,7 +272,7 @@ vaut ta devise locale en Dollar Américain ?
                             <outletCollection property="gestureRecognizers" destination="EyH-HI-02C" appends="YES" id="PlM-g0-9TC"/>
                         </connections>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Taux de change" image="dollarsign.square" catalog="system" id="OQS-uo-yj7"/>
+                    <tabBarItem key="tabBarItem" title="Convertisseur" image="dollarsign.square" catalog="system" id="OQS-uo-yj7"/>
                     <navigationItem key="navigationItem" title="Taux de change" id="d6q-Vz-Xy3"/>
                     <connections>
                         <outlet property="activityIndicatorView" destination="Oim-h4-zll" id="nSw-lh-5n3"/>
@@ -306,10 +307,9 @@ vaut ta devise locale en Dollar Américain ?
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="4yi-pe-2Sy"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Traduire">
-                                    <fontDescription key="titleFontDescription" name="AmericanTypewriter-Semibold" family="American Typewriter" pointSize="30"/>
-                                </buttonConfiguration>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter-Semibold" family="American Typewriter" pointSize="30"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Traduire"/>
                                 <connections>
                                     <action selector="tappedTranslationButton:" destination="qLz-Lr-owi" eventType="touchUpInside" id="HfL-Kw-YtQ"/>
                                 </connections>
@@ -399,7 +399,7 @@ vaut ta devise locale en Dollar Américain ?
                             <outletCollection property="gestureRecognizers" destination="rhc-Ip-plA" appends="YES" id="eUZ-Sa-xnk"/>
                         </connections>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Traduction" image="character.bubble" catalog="system" id="scE-V5-prM"/>
+                    <tabBarItem key="tabBarItem" title="Traduction" image="bubble.left.and.bubble.right" catalog="system" id="scE-V5-prM"/>
                     <navigationItem key="navigationItem" title="Traduction" id="CFC-zE-y2X"/>
                     <connections>
                         <outlet property="activityIndicatorView" destination="Cmd-x0-Wh3" id="2Id-pY-vqt"/>
@@ -606,7 +606,7 @@ Mais quel temps fait-il
     <resources>
         <image name="4" width="500" height="500"/>
         <image name="background" width="166.66667175292969" height="166.66667175292969"/>
-        <image name="character.bubble" catalog="system" width="128" height="110"/>
+        <image name="bubble.left.and.bubble.right" catalog="system" width="128" height="96"/>
         <image name="dollarsign.square" catalog="system" width="128" height="114"/>
         <image name="house" catalog="system" width="128" height="104"/>
         <image name="logo" width="166.66667175292969" height="166.66667175292969"/>
